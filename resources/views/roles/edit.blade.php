@@ -1,25 +1,21 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Rol')
-
-@section('content_header')
-    <h1>Editar Rol</h1>
-@stop
+@section('title', 'EDITAR ROL')
 
 @section('content')
-        @if (session('info'))
-            <div class="alert alert-success">
-                <strong>{{session('info')}}</strong>
-            </div>
-        @endif
-    <div class="card">
-        <div class="card-body">
-            {!! Form::model($role,['route' => ['admin.roles.update', $role], 'method' => 'PUT']) !!}
+    @include('sweetalert::alert')
+    <x-card-header>
+        <h3 class="text-white">Editar Rol {{ $role->name }}</h3>
+    </x-card-header>
 
-                @include('admin.roles.partials.form')
+    <x-card-body>
+        {!! Form::model($role, ['route' => ['roles.update', $role], 'method' => 'PUT']) !!}
 
-                {!! Form::submit('Editar rol', ['class' => 'btn btn-primary']) !!}
-            {!! Form::close() !!}
-        </div>
-    </div>
+
+        {!! Form::submit('Editar rol', ['class' => 'btn btn-block bg-navy btn-sm px-3 py-2 elevation-4']) !!}
+        {!! Form::close() !!}
+    </x-card-body>
+@stop
+@section('footer')
+    <x-footer></x-footer>
 @stop

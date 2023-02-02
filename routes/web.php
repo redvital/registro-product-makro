@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IncidenceController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
 
@@ -38,3 +39,4 @@ Route::resource('stores', StoreController::class )->except('show')->names('store
 Route::resource('incidences', IncidenceController::class )->except('show')->names('incidences');
 Route::resource('products', ProductController::class )->names('products');
 Route::resource('users', UserController::class )->names('users');
+Route::resource('roles', RoleController::class )->names('roles');

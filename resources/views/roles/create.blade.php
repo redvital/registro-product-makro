@@ -1,20 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear rol')
-
-@section('content_header')
-    <h1>Crear rol</h1>
-@stop
+@section('title', 'CREAR NUEVO ROL')
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            {!! Form::open(['route' => 'admin.roles.store']) !!}
+    @include('sweetalert::alert')
+    <x-card-header>
+        <h3 class="text-white">Registrar nuevo rol</h3>
+    </x-card-header>
 
-                @include('admin.roles.partials.form')
-
-                {!! Form::submit('Crear rol', ['class' => 'btn btn-primary']) !!}
-            {!! Form::close() !!}
-        </div>
-    </div>
+    <x-card-body>
+        {!! Form::open(['route' => 'roles.store']) !!}
+        {!! Form::submit('CREAR ROL', ['class' => 'btn btn-block bg-navy btn-sm px-3 py-2 elevation-4']) !!}
+        {!! Form::close() !!}
+    </x-card-body>
+@stop
+@section('footer')
+    <x-footer></x-footer>
 @stop

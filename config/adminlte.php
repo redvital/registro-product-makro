@@ -346,7 +346,25 @@ return [
                     'icon' => 'fas fa-fw fa-store',
                     'active' => ['stores*'],
                 ],
-                
+                [
+                    'text' => 'Categorias',
+                    'route'  => 'categories.index',
+                    'icon' => 'fas fa-fw fa-project-diagram',
+                    'active' => ['categories*'],
+                ],
+            ],
+        ],
+        
+        [
+            'text'    => 'SEGURIDAD',
+            'icon'    => 'fas fa-fw fa-cogs',
+            'submenu' => [
+                [
+                    'text' => 'Roles',
+                    'route'  => 'roles.index',
+                    'icon' => 'fas fa-fw fa-project-diagram',
+                    'active' => ['roles*'],
+                ],
                 [
                     'text' => 'Usuarios',
                     'route'  => 'users.index',

@@ -17,8 +17,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::all();
-        return view('admin.roles.index', compact('roles'));
+        return view('roles.index');
     }
 
     /**
@@ -29,7 +28,7 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::all();
-        return view('admin.roles.create', compact('permissions'));
+        return view('roles.create', compact('permissions'));
         
     }
 
@@ -48,7 +47,7 @@ class RoleController extends Controller
         $role = Role::create($request->all());
         $role->permissions()->sync($request->permissions);
 
-        return redirect()->route('admin.roles.edit', $role)->with('info', 'El Rol se creo con exito.');
+        return redirect()->route('roles.edit', $role)->with('info', 'El Rol se creo con exito.');
     }
 
     /**
@@ -59,7 +58,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        return view('admin.roles.show', compact('role'));
+        return view('roles.show', compact('role'));
         
     }
 
@@ -73,7 +72,7 @@ class RoleController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('admin.roles.edit', compact('role','permissions'));
+        return view('roles.edit', compact('role','permissions'));
         
     }
 
@@ -93,7 +92,7 @@ class RoleController extends Controller
         $role->update($request->all());
         $role->permissions()->sync($request->permissions);
 
-        return redirect()->route('admin.roles.edit', $role)->with('info', 'El Rol se actualizó con exito.');
+        return redirect()->route('roles.edit', $role)->with('info', 'El Rol se actualizó con exito.');
 
     }
 
@@ -107,6 +106,6 @@ class RoleController extends Controller
     {
         $role->delete();
 
-        return redirect()->route('admin.roles.index')->with('info', 'El rol se eliminó con exito...');
+        return redirect()->route('roles.index')->with('info', 'El rol se eliminó con exito...');
     }
 }
