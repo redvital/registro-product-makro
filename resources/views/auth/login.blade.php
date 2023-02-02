@@ -19,7 +19,8 @@
              <form method="POST" action="{{ route('login') }}" class="form2">
                  {{-- <form method="POST" action="" class="form2" id="login"> --}}
                  @csrf
-                 <h1 class="form__title">Login</h1>
+                 <div class="logo_login"><img src="img/loo3.png" width="620px" alt=""></div>
+
                  <div class="form__input-group">
                      <label for="username">Correo: </label>
                      <input type="text" class="form__input" name="email" id="email" maxlength="90"
@@ -65,8 +66,7 @@
              </div>
              <div class="overlay-panel overlay-right">
                  <h1>Bienvenido</h1>
-                 <p>Amigo Proveedor</p>
-                 <div class="logo_login"><img src="img/Makro_logo.svg.png" width="220px" alt=""></div>
+                 <div class="logo_login"><img src="img/Makro_logo.svg.png" width="620px" alt=""></div>
              </div>
          </div>
      </div>

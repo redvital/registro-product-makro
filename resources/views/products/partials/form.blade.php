@@ -28,10 +28,9 @@
             <div class="col-md-4">
                 <div class="form-group">
                     {!! Form::label('store_id', 'Tienda : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
-                    {!! Form::select('store_id', $stores, null, [
-                        'class' => 'form-control select2' . ($errors->has('store_id') ? ' is-invalid' : ''),
-                        'placeholder' => '',
-                    ]) !!}
+                    <p class="form-control"> {{auth()->user()->store->name}} </p>
+                    <input type="hidden" name="store_id" id="store_id" value="{{auth()->user()->store->id}}" >
+
                     {!! $errors->first('store_id', ' <div class="invalid-feedback text-center"><strong>:message</strong></div>') !!}
 
                 </div>

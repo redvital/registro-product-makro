@@ -22,7 +22,8 @@
             <form method="POST" action="{{ route('register') }}" class="form2">
                 {{-- <form method="POST" action="" class="form2" id="login"> --}}
                 @csrf
-                <h1 class="form__title">Registro</h1>
+                <div class="logo_login"><img src="img/loo3.png" width="620px" alt=""></div>
+                
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -60,12 +61,12 @@
                         <div class="form-group">
                             {!! Form::label('store_id', 'Tienda : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
                             {!! Form::select('store_id', $stores, null, [
-                                'class' => 'form__input sele select2 sele' . ($errors->has('store_id') ? ' is-invalid' : ''),
+                                'class' => 'form__input sele select2 ' . ($errors->has('store_id') ? ' is-invalid' : ''),
                                 'placeholder' => '',
                             ]) !!}
                             @error('store_id')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             {!! $errors->first('store_id', ' <div class="invalid-feedback text-center"><strong>:message</strong></div>') !!}
 
                         </div>

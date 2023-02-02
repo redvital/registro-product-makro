@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Actions\Jetstream\DeleteUser;
 use App\Models\Store;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 use Laravel\Jetstream\Jetstream;
@@ -27,7 +28,9 @@ class JetstreamServiceProvider extends ServiceProvider
 
         
         Fortify::registerView(function () {
-            $stores = Store::pluck('name', 'id');
+            // $stores = Store::pluck('name', 'id');
+            $stores = DB::table('stores')->pluck('name', 'id');
+
             return view('auth.register', compact('stores'));
         });    
     }

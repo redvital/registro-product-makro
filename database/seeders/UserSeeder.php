@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
             'last_name' => "dev",
             'cedula' => "12345678",
             'email' => 'admin@gmail.com',
+            'store_id' => 1,
             'password' => Hash::make('123456789')
         ])->assignRole('ADMINISTRADOR');
 
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
             'last_name' => "dev",
             'cedula' => "123456789",
             'email' => 'cliente@gmail.com',
+            'store_id' => 2,
             'password' => Hash::make('123456789')
         ])->assignRole('CLIENTE');
     }
