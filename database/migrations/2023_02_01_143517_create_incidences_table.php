@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('incidences', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->string('slug');
+            $table->string('description');
             $table->timestamps();
         });
     }

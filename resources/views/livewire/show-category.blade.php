@@ -58,6 +58,9 @@
                                 <i class="fas fa-sort float-right mt-1"></i>
                             @endif
                         </th>
+                        <th>
+                            Registro
+                        </th>
                         <th colspan="2"></th>
                     </tr>
                 </thead>

@@ -311,7 +311,19 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'account_settings'],
+        // ['header' => 'REPORTE DE INCIDENCIA'],
+        [
+            'text'    => 'REPORTE DE INCIDENCIA',
+            'icon'    => 'fas fa-fw fa-cogs',
+            'submenu' => [
+                [
+                    'text' => 'Productos',
+                    'route'  => 'products.index',
+                    'icon' => 'fab fa-fw fa-product-hunt',
+                    'active' => ['products*'],
+                ],
+            ],
+        ],
         [
             'text'    => 'CONFIGURACION BASICA',
             'icon'    => 'fas fa-fw fa-cogs',
@@ -323,28 +335,25 @@ return [
                     'active' => ['categories*'],
                 ],
                 [
+                    'text' => 'Incidencias',
+                    'route'  => 'incidences.index',
+                    'icon' => 'fas fa-fw fa-exclamation-triangle',
+                    'active' => ['incidences*'],
+                ],
+                [
                     'text' => 'Tiendas',
                     'route'  => 'stores.index',
                     'icon' => 'fas fa-fw fa-store',
                     'active' => ['stores*'],
                 ],
+                
+                [
+                    'text' => 'Usuarios',
+                    'route'  => 'users.index',
+                    'icon' => 'fas fa-fw fa-users',
+                    'active' => ['users*'],
+                ],
             ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
         ],
     ],
 

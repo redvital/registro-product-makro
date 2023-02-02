@@ -33,7 +33,7 @@
                         </th>
                         <th scope="col" role="button"
                             wire:click="order('name')">
-                            store
+                            Tienda
                             @if ($sort == 'name')
                                 @if ($direction == 'asc')
                                     <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
@@ -57,6 +57,9 @@
                             @else
                                 <i class="fas fa-sort float-right mt-1"></i>
                             @endif
+                        </th>
+                        <th>
+                            Registro
                         </th>
                         <th colspan="2"></th>
                     </tr>

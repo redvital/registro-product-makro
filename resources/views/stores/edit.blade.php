@@ -2,17 +2,21 @@
 
 @section('title', 'Editar Tienda')
 
-
-@section('content')
-
+@section('content_header')
     <x-card-header class="">
         <h3 class="text-white pt-2">Editar tienda</h3>
     </x-card-header>
+@endsection
 
+@section('content')
     <x-card-body>
+        <a href="{{ route('stores.index') }}" class="btn bg-navy btn-sm float-right mb-4 px-2 elevation-4"><i
+                class="fas fa-reply mt-2 px-3"></i>
+        </a>
+        <br>
         {!! Form::model($store, ['route' => ['stores.update', $store], 'method' => 'PUT']) !!}
         @include('stores.partials.form')
-        {!! Form::submit('Actualizar Tienda', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('Actualizar Tienda', ['class' => 'btn bg-navy float-right']) !!}
         {!! Form::close() !!}
     </x-card-body>
 @stop

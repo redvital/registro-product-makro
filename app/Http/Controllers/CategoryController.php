@@ -34,12 +34,13 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'slug' => 'required|unique:categories'
+            'slug' => 'required|unique:categories',
+            'description' => 'required'
         ]);
 
         Category::create($request->all());
 
-        return redirect()->route('categories.index')->with('info', 'La categoria se creo con exito...');
+        return redirect()->route('categories.index')->with('success', 'La categoria se creo con exito...');
     }
 
     public function edit(Category $category)
@@ -52,17 +53,19 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'slug' => "required|unique:categories,slug,$category->id"
+            'slug' => "required|unique:categories,slug,$category->id",
+            'description' => 'required'
+
         ]);
 
         $category->update($request->all());
-        return redirect()->route('categories.index', $category)->with('info', 'La categoria se actualizó con exito...');
+        return redirect()->route('categories.index', $category)->with('success', 'La categoria se actualizó con exito...');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
 
-        return redirect()->route('categories.index')->with('info', 'La categoria se eliminó con exito...');
+        return redirect()->route('categories.index')->with('success', 'La categoria se eliminó con exito...');
     }
 }
