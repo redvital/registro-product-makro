@@ -148,7 +148,11 @@ return [
 
     'attributes' => [
         'name' => 'nombre',
-        'address' => 'dirección'
-    ],
+        'address' => 'dirección',
+        'store_id' => 'tienda',
+        'category_id' => 'categoria',
+        'incidence_id' => 'incidencia',
+        'description' => 'descripción'
+     ],
 
 ];

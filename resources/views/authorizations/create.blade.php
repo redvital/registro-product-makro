@@ -1,21 +1,24 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Tienda')
+@section('title', 'Autorización')
 
 @section('content_header')
 <x-card-header class="">
-    <h3 class="text-white pt-2">Crear nueva Tienda</h3>
+    <h3 class="text-white pt-2">Autorización</h3>
 </x-card-header>
-@endsection
+
+@stop
 
 @section('content')
+
+
     <x-card-body>
-        <a href="{{ route('stores.index') }}" class="btn bg-navy btn-sm float-right mb-4 px-2 elevation-4"><i class="fas fa-reply mt-2 px-3"></i>
+        <a href="{{ route('authorizations.index') }}" class="btn bg-navy btn-sm float-right mb-4 px-2 elevation-4"><i class="fas fa-reply mt-2 px-3"></i>
         </a>
         <br>
-        {!! Form::open(['route' => 'stores.store']) !!}
-        @include('stores.partials.form')
-        {!! Form::submit('Crear Tienda', ['class' => 'btn bg-navy float-right']) !!}
+        {!! Form::open(['route' => 'authorizations.store']) !!}
+        @include('authorizations.partials.form')
+        {!! Form::submit('Crear Categoria', ['class' => 'btn bg-navy float-right']) !!}
         {!! Form::close() !!}
     </x-card-body>
 @stop

@@ -10,20 +10,18 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('can:products.index')->only('index');
-    //     $this->middleware('can:products.create')->only('create','store');
-    //     $this->middleware('can:products.edit')->only('edit','update');
-    //     $this->middleware('can:products.destroy')->only('destroy');
+    public function __construct()
+    {
+        $this->middleware('can:products.index')->only('index');
+        $this->middleware('can:products.create')->only('create','store');
+        $this->middleware('can:products.edit')->only('edit','update');
+        $this->middleware('can:products.destroy')->only('destroy');
 
-    // }
+    }
 
     public function index()
     {
-        $products = Product::all();
-
-        return view ('products.index', compact('products'));
+        return view ('products.index');
     }
 
     public function create()
@@ -36,6 +34,14 @@ class ProductController extends Controller
         
     }
 
+    public function show(Product $product)
+    {
+        $stores  = DB::table('stores')->pluck('name' , 'id');
+        $categories  = DB::table('categories')->pluck('name' , 'id');
+        $incidences  = DB::table('incidences')->pluck('type' , 'id');
+        return view('products.show',compact('stores','categories','incidences','product'));
+
+    }
     public function store(Request $request)
     {
         // dd($request);
@@ -64,7 +70,7 @@ class ProductController extends Controller
             ]);
         }
 
-        return redirect()->route('products.index')->with('success', 'La producto se creo con exito...');
+        return redirect()->route('products.index')->with('success', 'La incidencia se creo con exito...');
     }
 
     public function edit(Product $product)
@@ -78,19 +84,20 @@ class ProductController extends Controller
 
     public function update(Request $request,Product  $product)
     {
+        // dd($product);
+
         $request->validate([
             'name' => 'required',
-            'slug' => 'required|max:255|unique:products,slug'.$product->id,
+            'slug' => 'required|max:255|unique:products,slug,'.$product->id,
             'store_id' => 'required|exists:stores,id',
             'category_id' => 'required|exists:categories,id',
             'incidence_id' => 'required|exists:incidences,id',
-            'description' => 'rrequired',
-            'user_id' => 'required|exists:users,id'
+            'description' => 'required',
         ]);
         $product->update($request->all());
 
         if ($request->file('file')) {
-            $url = Storage::put('posts', $request->file('file'));
+            $url = Storage::put('products', $request->file('file'));
             if ($product->image) {
                 Storage::delete($product->image->url);
 
@@ -104,13 +111,13 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('products.index', $product)->with('success', 'La producto se actualizó con exito...');
+        return redirect()->route('products.index')->with('success', 'La incidencia se actualizó con exito...');
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
 
-        return redirect()->route('products.index')->with('success', 'La producto se eliminó con exito...');
+        return redirect()->route('products.index')->with('success', 'La incidencia se eliminó con exito...');
     }
 }

@@ -1,38 +1,21 @@
 @extends('adminlte::page')
 
-@section('title','USUARIOS')
+@section('title', 'Usuarios')
+@section('content_header')
+
+    <x-card-header class="mt-2">
+        <h3 class="text-white pt-2">Lista de Usuarios</h3>
+    </x-card-header>
+@stop
 
 @section('content')
-    @include('sweetalert::alert')
-    <x-card-header>
-        <h3 class="text-white">Lista de usuarios</h3>
-    </x-card-header>
-    
-        @livewire('show-user')
-    
+    @livewire('show-user')
 @stop
-
-@section('footer')
-    <x-footer></x-footer>
-@stop
-
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
-
+    <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
 @section('js')
-    <script src=" {{ asset('vendor/sweetalert2.js') }}  "></script>
-    <script src=" {{ asset('vendor/sweetalert-eliminar.js') }} "></script>
-    <script src=" {{ asset('vendor/sweetalert-estatus.js') }} "></script>
-    <script src=" {{ asset('vendor/sweetalert-estatus2.js') }} "></script>
-    <script src=" {{ asset('vendor/popper.min.js') }} "></script>
-
-    <script>
-        $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-
+    <script> console.log('Hi!'); </script>
 @stop

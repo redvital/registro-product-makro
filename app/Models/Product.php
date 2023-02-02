@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $fillable = ['id','name','slug','store_id','user_id','category_id','incidence_id','description'];
 
     public function getRouteKeyName()
     {
@@ -26,6 +26,15 @@ class Product extends Model
     public function store()
     {
         return $this->belongsTo(Store::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function authorization()
+    {
+        return $this->belongsTo(Authorization::class);
     }
 
     //relacion uno a uno polimorfica

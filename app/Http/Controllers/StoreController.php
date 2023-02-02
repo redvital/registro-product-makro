@@ -30,6 +30,12 @@ class StoreController extends Controller
         
     }
 
+    public function incidencestore(Store $store)
+    {
+        return view ('stores.incidence-store', compact('store'));
+        
+    }
+
     public function store(Request $request)
     {
         $request->validate([

@@ -317,10 +317,18 @@ return [
             'icon'    => 'fas fa-fw fa-cogs',
             'submenu' => [
                 [
-                    'text' => 'Productos',
+                    'text' => 'Reportar incidencia',
                     'route'  => 'products.index',
                     'icon' => 'fab fa-fw fa-product-hunt',
                     'active' => ['products*'],
+                    'can' => 'products.index',
+                ],
+                [
+                    'text' => 'Tiendas',
+                    'route'  => 'stores.index',
+                    'icon' => 'fas fa-fw fa-store',
+                    'active' => ['stores*'],
+                    'can' => 'stores.index',
                 ],
             ],
         ],
@@ -332,25 +340,13 @@ return [
                     'text' => 'Categorias',
                     'route'  => 'categories.index',
                     'icon' => 'fas fa-fw fa-project-diagram',
-                    'active' => ['categories*'],
                 ],
                 [
                     'text' => 'Incidencias',
                     'route'  => 'incidences.index',
                     'icon' => 'fas fa-fw fa-exclamation-triangle',
                     'active' => ['incidences*'],
-                ],
-                [
-                    'text' => 'Tiendas',
-                    'route'  => 'stores.index',
-                    'icon' => 'fas fa-fw fa-store',
-                    'active' => ['stores*'],
-                ],
-                [
-                    'text' => 'Categorias',
-                    'route'  => 'categories.index',
-                    'icon' => 'fas fa-fw fa-project-diagram',
-                    'active' => ['categories*'],
+                    'can' => 'incidences.index',
                 ],
             ],
         ],
@@ -358,18 +354,29 @@ return [
         [
             'text'    => 'SEGURIDAD',
             'icon'    => 'fas fa-fw fa-cogs',
+            'can'  => 'users.index',
             'submenu' => [
+                
+                // [
+                //     'text' => 'Autorizaciones',
+                //     'route'  => 'authorizations.index',
+                //     'icon' => 'fas fa-fw fa-project-diagram',
+                //     'active' => ['authorizations*'],
+                //     'can' => 'authorizations.index',
+                // ],
                 [
                     'text' => 'Roles',
                     'route'  => 'roles.index',
                     'icon' => 'fas fa-fw fa-project-diagram',
                     'active' => ['roles*'],
+                    'can' => 'roles.index',
                 ],
                 [
                     'text' => 'Usuarios',
                     'route'  => 'users.index',
                     'icon' => 'fas fa-fw fa-users',
                     'active' => ['users*'],
+                    'can' => 'users.index',
                 ],
             ],
         ],

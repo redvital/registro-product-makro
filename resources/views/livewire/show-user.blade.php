@@ -5,10 +5,12 @@
                 <span class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
             <input wire:model="search" type="text" class="form-control mr-2" placeholder="Buscar">
-            
-                <a href="{{ route('users.create') }}" class="btn bg-navy btn-sm px-2 elevation-4"><i
-                        class="fas fa-plus mt-2 px-3"></i>
-                </a>
+            @can('users.create')
+                
+            <a href="{{ route('users.create') }}" class="btn bg-navy btn-sm px-2 elevation-4"><i
+                class="fas fa-plus mt-2 px-3"></i>
+            </a>
+            @endcan
         </div>
     </div>
     <!-- /.card-header -->
@@ -18,9 +20,9 @@
                 <thead>
                     <tr class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
                         <th scope="col" role="button"
-                            wire:click="order('id')">
-                            Nro.
-                            @if ($sort == 'id')
+                            wire:click="order('cedula')">
+                            Cedula
+                            @if ($sort == 'cedula')
                                 @if ($direction == 'asc')
                                     <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
                                 @else
@@ -33,7 +35,7 @@
                         </th>
                         <th scope="col" role="button"
                             wire:click="order('name')">
-                            Tienda
+                            Nombre
                             @if ($sort == 'name')
                                 @if ($direction == 'asc')
                                     <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
@@ -47,7 +49,7 @@
                         
                         <th scope="col" role="button"
                             wire:click="order('address')">
-                            Ubicación
+                            Tienda
                             @if ($sort == 'address')
                                 @if ($direction == 'asc')
                                     <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
@@ -68,15 +70,14 @@
                     @foreach ($users as $user)
                         <tr class="text-secondary font-weight-bold text-sm">
                             <td>
-                                {{$user->id}}
+                                {{$user->cedula}}
                             </td>
                             <td>
-                                {{$user->name}}
+                                {{$user->name}}-{{ $user->last_name }}
                             </td>
-                            
-                            <td>
-                                {{ $user->last_name }}
-                            </td>
+                            <th>
+                                {{$user->store->name}}
+                            </th>
                             <td>
                                 {{$user->created_at}}
                             </td>                               

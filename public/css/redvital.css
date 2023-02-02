@@ -74,7 +74,14 @@ button.ghost {
 input {
 	background-color: #eee;
 	border: none;
-	padding: 12px 15px;
+	padding: 8px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+.sele {
+	background-color: #eee;
+	border: none;
+	padding: 8px 15px;
 	margin: 8px 0;
 	width: 100%;
 }

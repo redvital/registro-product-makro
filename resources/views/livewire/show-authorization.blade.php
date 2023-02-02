@@ -5,22 +5,20 @@
                 <span class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
             <input wire:model="search" type="text" class="form-control mr-2" placeholder="Buscar">
-            @can('products.create')
-                
-            <a href="{{ route('products.create') }}" class="btn bg-navy btn-sm px-2 elevation-4"><i
-                class="fas fa-plus mt-2 px-3"></i>
-            </a>
+            @can('authorizations.create')
+                <a href="{{ route('authorizations.create') }}" class="btn bg-navy btn-sm px-2 elevation-4"><i
+                        class="fas fa-plus mt-2 px-3"></i>
+                </a>
             @endcan
         </div>
     </div>
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0">
-        @if ($products->count())
+        @if ($authorizations->count())
             <table class="table table-striped table-hover text-nowrap">
                 <thead>
                     <tr class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
-                        <th scope="col" role="button"
-                            wire:click="order('id')">
+                        <th scope="col" role="button" wire:click="order('id')">
                             Nro.
                             @if ($sort == 'id')
                                 @if ($direction == 'asc')
@@ -33,10 +31,9 @@
                             @endif
 
                         </th>
-                        <th scope="col" role="button"
-                            wire:click="order('name')">
-                            Tipo
-                            @if ($sort == 'name')
+                        <th scope="col" role="button" wire:click="order('user_id')">
+                            Usuario
+                            @if ($sort == 'user_id')
                                 @if ($direction == 'asc')
                                     <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
                                 @else
@@ -46,23 +43,9 @@
                                 <i class="fas fa-sort float-right mt-1"></i>
                             @endif
                         </th>
-                        <th scope="col" role="button"
-                            wire:click="order('store_id')">
+                        <th scope="col" role="button" wire:click="order('store_id')">
                             Tienda
                             @if ($sort == 'store_id')
-                                @if ($direction == 'asc')
-                                    <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
-                                @else
-                                    <i class="fas fa-sort-amount-down float-right mt-1"></i>
-                                @endif
-                            @else
-                                <i class="fas fa-sort float-right mt-1"></i>
-                            @endif
-                        </th>
-                        <th scope="col" role="button"
-                            wire:click="order('incidence_id')">
-                            incidencia
-                            @if ($sort == 'incidence_id')
                                 @if ($direction == 'asc')
                                     <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
                                 @else
@@ -75,48 +58,46 @@
                         <th>
                             Registro
                         </th>
-                        
+
                         <th colspan="2"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($products as $product)
+                    @foreach ($authorizations as $authorization)
                         <tr class="text-secondary font-weight-bold text-sm">
                             <td>
-                                {{$product->id}}
+                                {{ $authorization->id }}
                             </td>
                             <td>
-                                {{ $product->name }}
+                                {{ $authorization->user->name }}
+                            </td>
+
+                            <td>
+                                {{ $authorization->store->name }}
                             </td>
                             <td>
-                                {{$product->store->name}}
+                                {{ $authorization->created_at }}
                             </td>
-                            
-                            <td>
-                                {{$product->incidence->type}}
-                            </td>
-                            <td>
-                                {{$product->created_at}}
-                            </td>                               
-                            
+
                             <td width="4px">
                                 <div class="btn-group">
-                                        <a class="btn btn-default btn-sm"
-                                            style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
-                                            href=" {{ route('products.edit', $product) }} "><i
-                                                class="fas fa-edit text-blue"></i>
-                                        </a>
-                                        <a type="button" class="btn btn-default btn-sm"
-                                            style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;">
-                                            <form class="formulario-eliminar"
-                                                action="{{ route('products.destroy', $product) }}" method="POST">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit"
-                                                    class="btn btn-default btn-sm border-0 p-0 text-danger"><i
-                                                        class="fas fa-trash"></i></button>
-                                            </form>
-                                        </a>
+                                    <a class="btn btn-default btn-sm"
+                                        style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
+                                        href=" {{ route('authorizations.edit', $authorization) }} "><i
+                                            class="fas fa-edit text-blue"></i>
+                                    </a>
+                                    <a type="button" class="btn btn-default btn-sm"
+                                        style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;">
+                                        <form class="formulario-eliminar"
+                                            action="{{ route('authorizations.destroy', $authorization) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit"
+                                                class="btn btn-default btn-sm border-0 p-0 text-danger"><i
+                                                    class="fas fa-trash"></i></button>
+                                        </form>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
@@ -124,7 +105,7 @@
                 </tbody>
             </table>
             <span class="py-2 px-4 float-right ">
-                {{ $products->links() }}
+                {{ $authorizations->links() }}
             </span>
         @else
             <div class="px-6 py-4 text-center text-sm">

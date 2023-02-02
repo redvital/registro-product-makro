@@ -6,16 +6,21 @@
     <div class="form-group">
         {!! Form::label('name', 'Nombre : ', ['class' => 'text-blue']) !!} <span class="text-danger">*</span>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-clipboard-list text-blue"></i></span>
-            </div>
             {{ Form::text('name', null, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('name', ' <div class="invalid-feedback text-center"><strong>:message</strong></div>') !!}
 
         </div>
     </div>
 </div>
-<h2 class="h4 text-center font-weight-bold text-secondary">Lista de permisos</h2>
+<h2 class="h3">Lista de permisos</h2>
+@foreach ($permissions as $permission)
+    <div>
+        <label>
+            {!! Form::checkbox('permissions[]', $permission->id, null, ['class' => 'mr-1']) !!}
+            {{$permission->description}}
+        </label>
+    </div>
+@endforeach
 
 
 

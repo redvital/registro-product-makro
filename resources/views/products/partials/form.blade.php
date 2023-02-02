@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     {!! Form::label('name', 'Nombre del producto : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
-                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la categoria']) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del producto']) !!}
                     <input type="hidden" name="slug" id="slug">
                     @error('name')
                         <span class="text-danger">{{ $message }}</span>

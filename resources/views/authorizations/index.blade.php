@@ -1,18 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'Lista de incidencias reportadas')
+@section('title', 'Lista Categorias')
 
 @section('content_header')
 
 <x-card-header class="mt-2">
-    <h3 class="text-white pt-2">Lista de incidencias reportadas</h3>
+    <h3 class="text-white pt-2">Lista de Categorias</h3>
 </x-card-header>
 @stop
 
 @section('content')
     @include('sweetalert::alert')
 
-    @livewire('show-product')
+    @livewire('show-authorization')
 
 @stop
 

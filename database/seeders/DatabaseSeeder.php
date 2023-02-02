@@ -18,8 +18,10 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('products');
         Storage::makeDirectory('products');
 
-        $this->call(UserSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(StoreSeeder::class);
+        $this->call(IncidenceSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

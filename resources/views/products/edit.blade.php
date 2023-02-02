@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Producto')
+@section('title', 'Editar incidencia')
 
 @section('content_header')
 
     <x-card-header class="mt-2">
-        <h3 class="text-white pt-2">Editar Producto</h3>
+        <h3 class="text-white pt-2">Editar incidencia</h3>
     </x-card-header>
 @stop
 
@@ -17,7 +17,7 @@
         <br>
         {!! Form::model($product, ['route' => ['products.update', $product],'files' => true, 'method' => 'PUT']) !!}
         @include('products.partials.form')
-        {!! Form::submit('Actualizar Categoria', ['class' => 'btn bg-navy float-right']) !!}
+        {!! Form::submit('Actualizar Registro', ['class' => 'btn bg-navy float-right']) !!}
         {!! Form::close() !!}
     </x-card-body>
 @stop

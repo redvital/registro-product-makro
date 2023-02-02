@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
 
 class User extends Authenticatable
 {
@@ -64,4 +65,17 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
+    }
+    public function roleable(){
+        return $this->morphTo();
+    }
 }

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Producto')
+@section('title', 'Registrar incidencia')
 
 @section('content_header')
     <x-card-header class="">
@@ -11,13 +11,16 @@
 
 @section('content')
     <x-card-body>
+        @can('products.index')
+            
         <a href="{{ route('products.index') }}" class="btn bg-navy btn-sm float-right mb-4 px-2 elevation-4"><i
-                class="fas fa-reply mt-2 px-3"></i>
+            class="fas fa-reply mt-2 px-3"></i>
         </a>
+        @endcan
         <br>
         {!! Form::open(['route' => 'products.store','files' => true]) !!}
         @include('products.partials.form')
-        {!! Form::submit('Crear Producto', ['class' => 'btn bg-navy float-right']) !!}
+        {!! Form::submit('Crear registro', ['class' => 'btn bg-navy float-right']) !!}
         {!! Form::close() !!}
     </x-card-body>
 @stop

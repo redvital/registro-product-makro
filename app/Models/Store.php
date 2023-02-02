@@ -15,9 +15,17 @@ class Store extends Model
         return 'slug';
     }
 
-
-    public function product()
+    public function authorization()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Authorization::class);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    public function users(){
+        return $this->hasMany(User::class);
     }
 }

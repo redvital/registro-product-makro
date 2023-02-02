@@ -1,13 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'ENASA | ROLES Y PERMISOS')
+@section('title', 'ROLES Y PERMISOS')
+
+@section('content_header')
+
+<x-card-header>
+    <h3 class="text-white">Lista de roles y permisos</h3>
+</x-card-header>
+@stop
+
 
 @section('content')
     @include('sweetalert::alert')
 
-    <x-card-header>
-        <h3 class="text-white">Lista de roles y permisos</h3>
-    </x-card-header>
     
     @livewire('show-roles')
 @stop
