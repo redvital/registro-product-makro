@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->string('sku');
             $table->foreignId('store_id')->references('id')->on('stores');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('category_id')->references('id')->on('categories');

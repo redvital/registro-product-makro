@@ -47,6 +47,7 @@ class ProductController extends Controller
         // dd($request);
         $data = $request->validate([
             'name' => 'required',
+            'sku' => 'required',
             'slug' => 'required|unique:products',
             'store_id' => 'required|not_in:0',
             'category_id' => 'required|not_in:0',
@@ -88,6 +89,7 @@ class ProductController extends Controller
 
         $request->validate([
             'name' => 'required',
+            'sku' => 'required',
             'slug' => 'required|max:255|unique:products,slug,'.$product->id,
             'store_id' => 'required|exists:stores,id',
             'category_id' => 'required|exists:categories,id',

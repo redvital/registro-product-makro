@@ -3,12 +3,22 @@
 <div class="row mb-4">
     <div class="col-md-8">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="form-group">
                     {!! Form::label('name', 'Nombre del producto : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
                     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del producto']) !!}
                     <input type="hidden" name="slug" id="slug">
                     @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    {!! Form::label('sku', 'SKU del producto : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
+                    {!! Form::text('sku', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el sku del producto']) !!}
+                
+                    @error('sku')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>

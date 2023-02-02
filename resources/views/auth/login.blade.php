@@ -5,7 +5,7 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Acceso Proveedor redvital®</title>
+     <title>Incidencias Makro</title>
      <link rel="stylesheet" href="{{asset ('css/redvital.css')}}">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -34,16 +34,16 @@
                      "Clave o usuario no validos"
                  @enderror
                  <div class="form__input-group">
-                     <button type="submit" class="form__button">Enviar</button>
+                     <button type="submit" class="form__button">Iniciar sesión</button>
                  </div>
-
+                 <a href="/register" class="form__button">Registrarme</a>
 
                  <div class="flex items-center justify-end mt-4">
-                     @if (Route::has('password.request'))
+                     {{-- @if (Route::has('password.request'))
                          <a class="text-sm text-gray-600 underline hover:text-gray-900" href="/forgot-password">
                              {{ __('¿Olvidaste tu contraseña?') }}
                          </a>
-                     @endif
+                     @endif --}}
 
                      {{-- <x-jet-button class="ml-4">
                             {{ __('Log in') }}

@@ -35,7 +35,20 @@
                         </th>
                         <th scope="col" role="button"
                             wire:click="order('name')">
-                            Tipo
+                            Producto
+                            @if ($sort == 'name')
+                                @if ($direction == 'asc')
+                                    <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
+                                @else
+                                    <i class="fas fa-sort-amount-down float-right mt-1"></i>
+                                @endif
+                            @else
+                                <i class="fas fa-sort float-right mt-1"></i>
+                            @endif
+                        </th>
+                        <th scope="col" role="button"
+                            wire:click="order('name')">
+                            SKU
                             @if ($sort == 'name')
                                 @if ($direction == 'asc')
                                     <i class="fas fas fa-sort-amount-down-alt float-right mt-1"></i>
@@ -87,6 +100,9 @@
                             </td>
                             <td>
                                 {{ $product->name }}
+                            </td>
+                            <td>
+                                {{ $product->sku }}
                             </td>
                             <td>
                                 {{$product->store->name}}
