@@ -124,21 +124,21 @@ class RoleSeeder extends Seeder
         Permission::create([
             'name'        => 'stores.index',
             'description' => 'Ver listado de tiendas'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
         Permission::create([
             'name'        => 'stores.create',
             'description' => 'Crear tiendas'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
         Permission::create([
             'name'        => 'stores.edit',
             'description' => 'Editar tiendas'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
         Permission::create([
             'name'        => 'stores.incidence-store',
             'description' => 'Ver incidencias por tiendas'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
         Permission::create([
             'name'        => 'stores.update',
