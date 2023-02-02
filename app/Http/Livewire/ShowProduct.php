@@ -22,10 +22,15 @@ class ShowProduct extends Component
 
     public function render()
     {
-        $products = Product::where('name', 'like', '%' . $this->search . '%')
-            ->orderBy($this->sort, $this->direction)
-            ->paginate(10);
-        return view('livewire.show-product', compact('products'));
+     
+        if (auth()->user()->roles[0]->id == 2) {
+            $products = auth()->user()->products()->where('name', 'like', '%' . $this->search . '%')->orderBy($this->sort, $this->direction)->paginate(10);
+            return view('livewire.show-product', compact('products'));
+
+        } elseif (auth()->user()->roles[0]->id == 1) {
+            $products = Product::where('name', 'like', '%' . $this->search . '%')->orderBy($this->sort, $this->direction)->paginate(10);
+            return view('livewire.show-product', compact('products'));
+        }
 
 
     }

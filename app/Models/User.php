@@ -75,6 +75,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Store::class);
     }
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
     public function roleable(){
         return $this->morphTo();
     }
