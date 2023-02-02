@@ -76,7 +76,7 @@
                                 {{$user->name}}-{{ $user->last_name }}
                             </td>
                             <th>
-                                {{$user->store->name}}
+                                {{$user?->store?->name}}
                             </th>
                             <td>
                                 {{$user->created_at}}

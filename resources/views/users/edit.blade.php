@@ -36,7 +36,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     {!! Form::label('name', 'Tienda : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
-                    <p type="text" class="form-control" >{{$user->store->name}}</p>
+                    <p type="text" class="form-control" >{{$user?->store?->name}}</p>
                 </div>
             </div>
         </div>
