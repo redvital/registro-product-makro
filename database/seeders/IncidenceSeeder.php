@@ -45,6 +45,7 @@ class IncidenceSeeder extends Seeder
             'slug' => 'descripcion-incorrecta',
             'description' => 'Descripción Incorrecta'
         ]);
+    
 
     }
 }

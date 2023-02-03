@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','name','slug','sku','store_id','user_id','category_id','incidence_id','description'];
+    protected $fillable = ['id', 'name', 'slug', 'sku', 'store_id', 'user_id', 'category_id', 'incidence_id', 'description'];
 
     public function getRouteKeyName()
     {
@@ -22,6 +22,10 @@ class Product extends Model
     public function incidence()
     {
         return $this->belongsTo(Incidence::class);
+    }
+    public function statu()
+    {
+        return $this->belongsTo(Statu::class);
     }
     public function store()
     {
