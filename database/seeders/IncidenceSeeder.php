@@ -16,14 +16,34 @@ class IncidenceSeeder extends Seeder
     public function run()
     {
         Incidence::create([
-            'type' => 'Falla de calentamiento',
-            'slug' => 'Falla-de-calentamiento',
-            'description' => 'Falla de calentamiento'
+            'type' => 'C. BARRA ERRADO',
+            'slug' => 'c-barra-errado',
+            'description' => 'Codigo de Barra Errado'
         ]); 
         Incidence::create([
-            'type' => 'Se descargar',
-            'slug' => 'se-descarga',
-            'description' => 'Bateria mala'
+            'type' => 'PRODUCTO SIN INVENTARIO',
+            'slug' => 'producto-sin-inventario',
+            'description' => 'Producto Sin Inventario'
+        ]); 
+        Incidence::create([
+            'type' => 'PRODUCTO NO EXISTE',
+            'slug' => 'producto-no-existe',
+            'description' => 'Producto No Existe'
+        ]); 
+        Incidence::create([
+            'type' => 'C. BARRA INVERTIDO',
+            'slug' => 'c-barra-invertido',
+            'description' => 'Codigo De Barra Invertido'
+        ]); 
+        Incidence::create([
+            'type' => 'C. BARRA INVERTIDO',
+            'slug' => 'c-barra-invertido',
+            'description' => 'Codigo De Barra Invertido'
+        ]); 
+        Incidence::create([
+            'type' => 'DESCRIPCION INCORRECTA',
+            'slug' => 'descripcion-incorrecta',
+            'description' => 'Descripción Incorrecta'
         ]);
 
     }

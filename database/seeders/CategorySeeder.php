@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -16,14 +15,25 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Electrodomesticos',
-            'slug' => 'electrodomesticos',
-            'description' => 'Electrodomesticos'
-        ]); 
+            'name' => 'NO ALIMENTOS',
+            'slug' => 'no-alimentos',
+            'description' => 'No Alimentos',
+        ]);
+
         Category::create([
-            'name' => 'Electricos',
-            'slug' => 'electricos',
-            'description' => 'electricos'
+            'name' => 'ALIMENTOS SECOS',
+            'slug' => 'alimentos-secos',
+            'description' => 'Alimentos Secos',
+        ]);
+        Category::create([
+            'name' => 'PERECEDEROS',
+            'slug' => 'perecederos',
+            'description' => 'Perecederos',
+        ]);
+        Category::create([
+            'name' => 'INSUMOS MQ',
+            'slug' => 'insumos-mq',
+            'description' => 'Insumo MQ',
         ]);
     }
 }
