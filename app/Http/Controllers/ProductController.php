@@ -62,7 +62,7 @@ class ProductController extends Controller
         $user = auth()->user();
         
         $data['user_id'] = $user->id;
-
+        $data['status_id'] = 1;
         $product = Product::create($data);
 
         if ($request->file('file')) {
