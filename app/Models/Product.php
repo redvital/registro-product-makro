@@ -23,7 +23,7 @@ class Product extends Model
     {
         return $this->belongsTo(Incidence::class);
     }
-    public function statu()
+    public function status()
     {
         return $this->belongsTo(Statu::class);
     }

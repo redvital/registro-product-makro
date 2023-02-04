@@ -28,11 +28,7 @@ class JetstreamServiceProvider extends ServiceProvider
 
         
         Fortify::registerView(function () {
-            // $stores = Store::pluck('name', 'id');
-            // $stores = DB::table('stores')->pluck('name', 'id');
-            // $stores = Store::pluck('name', 'id');
-            $stores = Store::select('stores.id', 'stores.name')
-            ->get();
+            $stores = Store::select('stores.id', 'stores.name')->get();
 
             return view('auth.register', compact('stores'));
         });    

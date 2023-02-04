@@ -59,16 +59,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            {{-- {!! Form::label('store_id', 'Tienda : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span> --}}
-                            {{-- {!! Form::select('store_id', $stores, null, [
-                                'class' => 'form__input sele select2 ' . ($errors->has('store_id') ? ' is-invalid' : ''),
-                                'placeholder' => '',
-                            ]) !!} --}}
-                            <label for="store_id" class="text-navy">Tienda :</label>
-
-                            <select class="form-control  selectpicker select2" name="store_id" id="store_id"
+                            {!! Form::label('store_id', 'Tienda : ', ['class' => 'text-navy']) !!}
+                            <select class="form-control  selectpicker select2" required name="store_id" id="store_id"
                                 data-live-search="true">
-                                <option value="0">Seleccione una opción</option>
+                                <option value="">Seleccione una opción</option>
                                 @foreach ($stores as $store)
                                     <option value="{{ $store->id }}">{{ $store->name }}</option>
                                 @endforeach

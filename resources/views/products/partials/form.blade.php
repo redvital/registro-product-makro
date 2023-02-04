@@ -50,10 +50,7 @@
                 <div class="form-group">
                     {!! Form::label('store_id', 'Tienda : ', ['class' => 'text-navy']) !!} <span
                         class="text-danger">*</span>
-                    {!! Form::select('store_id', $stores, null, [
-                    'class' => 'form-control select2' . ($errors->has('store_id') ? ' is-invalid' : ''),
-                    'placeholder' => '',
-                    ]) !!}
+                    {!! Form::select('store_id', $stores, null, ['class' => 'form-control select2' . ($errors->has('store_id') ? ' is-invalid' : ''),]) !!}
                     {!! $errors->first('store_id', ' <div class="invalid-feedback text-center"><strong>:message</strong>
                     </div>') !!}
 

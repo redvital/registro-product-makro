@@ -80,6 +80,9 @@
                             @endif
                         </th>
                         <th>
+                            Estatus
+                        </th>
+                        <th>
                             Registro
                         </th>
 
@@ -104,6 +107,14 @@
 
                             <td>
                                 {{ $product->incidence->type }}
+                            </td>
+                            <td>
+                                @if ($product->status_id == 1)
+                                    <span class="badge badge-warning shadow-sm elevation-2">{{$product->status->type}}</span>
+                                
+                                @else
+                                {{$product->status->type}}
+                                @endif
                             </td>
                             <td>
                                 {{ $product->created_at }}
