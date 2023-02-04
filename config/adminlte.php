@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -317,6 +317,13 @@ return [
             'icon'    => 'fas fa-fw fa-cogs',
             'submenu' => [
                 [
+                    'text' => 'Incidencias',
+                    'route'  => 'incidences.index',
+                    'icon' => 'fas fa-fw fa-exclamation-triangle',
+                    'active' => ['incidences*'],
+                    'can' => 'incidences.index',
+                ],
+                [
                     'text' => 'Reportar incidencia',
                     'route'  => 'products.index',
                     'icon' => 'fab fa-fw fa-product-hunt',
@@ -333,41 +340,28 @@ return [
             ],
         ],
         [
-            'text'    => 'CONFIGURACION BASICA',
-            'icon'    => 'fas fa-fw fa-cogs',
-            'submenu' => [
-                [
-                    'text' => 'Categorias',
-                    'route'  => 'categories.index',
-                    'icon' => 'fas fa-fw fa-project-diagram',
-                ],
-                [
-                    'text' => 'Incidencias',
-                    'route'  => 'incidences.index',
-                    'icon' => 'fas fa-fw fa-exclamation-triangle',
-                    'active' => ['incidences*'],
-                    'can' => 'incidences.index',
-                ],
-            ],
-        ],
-        
-        [
-            'text'    => 'SEGURIDAD',
+            'text'    => 'CONFIGURACION',
             'icon'    => 'fas fa-fw fa-cogs',
             'can'  => 'users.index',
             'submenu' => [
-                
-                // [
-                //     'text' => 'Autorizaciones',
-                //     'route'  => 'authorizations.index',
-                //     'icon' => 'fas fa-fw fa-project-diagram',
-                //     'active' => ['authorizations*'],
-                //     'can' => 'authorizations.index',
-                // ],
+                [
+                    'text' => 'Estatus',
+                    'route'  => 'status.index',
+                    'icon' => 'fas fa-fw fa-info',
+                    'active' => ['status*'],
+                    'can' => 'status.index'
+                ],
+                [
+                    'text' => 'Categorias',
+                    'route'  => 'categories.index',
+                    'icon' => 'fas fa-fw fa-stream',
+                    'active' => ['categories*'],
+                    'can' => 'categories.index',
+                ],
                 [
                     'text' => 'Roles',
                     'route'  => 'roles.index',
-                    'icon' => 'fas fa-fw fa-project-diagram',
+                    'icon' => 'fas fa-fw fa-tasks',
                     'active' => ['roles*'],
                     'can' => 'roles.index',
                 ],

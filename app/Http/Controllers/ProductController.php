@@ -29,6 +29,7 @@ class ProductController extends Controller
         $stores  = DB::table('stores')->pluck('name' , 'id');
         $categories  = DB::table('categories')->pluck('name' , 'id');
         $incidences  = DB::table('incidences')->pluck('type' , 'id');
+        // $status  = DB::table('status')->pluck('type' , 'id');
 
         return view ('products.create',compact('stores','categories','incidences'));
         
@@ -39,7 +40,8 @@ class ProductController extends Controller
         $stores  = DB::table('stores')->pluck('name' , 'id');
         $categories  = DB::table('categories')->pluck('name' , 'id');
         $incidences  = DB::table('incidences')->pluck('type' , 'id');
-        return view('products.show',compact('stores','categories','incidences','product'));
+        $status  = DB::table('status')->pluck('type' , 'id');
+        return view('products.show',compact('stores','categories','incidences','product','status'));
 
     }
     public function store(Request $request)
@@ -80,7 +82,6 @@ class ProductController extends Controller
         $categories  = DB::table('categories')->pluck('name' , 'id');
         $incidences  = DB::table('incidences')->pluck('type' , 'id');
         return view ('products.edit', compact('product','stores','categories','incidences'));
-        
     }
 
     public function update(Request $request,Product  $product)
@@ -116,10 +117,10 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'La incidencia se actualizó con exito...');
     }
 
-    public function destroy(Product $product)
-    {
-        $product->delete();
+    // public function destroy(Product $product)
+    // {
+    //     $product->delete();
 
-        return redirect()->route('products.index')->with('success', 'La incidencia se eliminó con exito...');
-    }
+    //     return redirect()->route('products.index')->with('success', 'La incidencia se eliminó con exito...');
+    // }
 }

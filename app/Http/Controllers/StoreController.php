@@ -8,14 +8,14 @@ use App\Models\Store;
 
 class StoreController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('can:stores.index')->only('index');
-    //     $this->middleware('can:stores.create')->only('create','store');
-    //     $this->middleware('can:stores.edit')->only('edit','update');
-    //     $this->middleware('can:stores.destroy')->only('destroy');
+    public function __construct()
+    {
+        $this->middleware('can:stores.index')->only('index');
+        $this->middleware('can:stores.create')->only('create','store');
+        $this->middleware('can:stores.edit')->only('edit','update');
+        $this->middleware('can:stores.destroy')->only('destroy');
 
-    // }
+    }
 
     public function index()
     {

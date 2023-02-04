@@ -6,10 +6,9 @@
             </div>
             <input wire:model="search" type="text" class="form-control mr-2" placeholder="Buscar">
             @can('users.create')
-                
-            <a href="{{ route('users.create') }}" class="btn bg-navy btn-sm px-2 elevation-4"><i
-                class="fas fa-plus mt-2 px-3"></i>
-            </a>
+                <a href="{{ route('users.create') }}" class="btn bg-navy btn-sm px-2 elevation-4"><i
+                        class="fas fa-plus mt-2 px-3"></i>
+                </a>
             @endcan
         </div>
     </div>
@@ -19,8 +18,7 @@
             <table class="table table-striped table-hover text-nowrap">
                 <thead>
                     <tr class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
-                        <th scope="col" role="button"
-                            wire:click="order('cedula')">
+                        <th scope="col" role="button" wire:click="order('cedula')">
                             Cedula
                             @if ($sort == 'cedula')
                                 @if ($direction == 'asc')
@@ -33,8 +31,7 @@
                             @endif
 
                         </th>
-                        <th scope="col" role="button"
-                            wire:click="order('name')">
+                        <th scope="col" role="button" wire:click="order('name')">
                             Nombre
                             @if ($sort == 'name')
                                 @if ($direction == 'asc')
@@ -46,9 +43,8 @@
                                 <i class="fas fa-sort float-right mt-1"></i>
                             @endif
                         </th>
-                        
-                        <th scope="col" role="button"
-                            wire:click="order('address')">
+
+                        <th scope="col" role="button" wire:click="order('address')">
                             Tienda
                             @if ($sort == 'address')
                                 @if ($direction == 'asc')
@@ -70,29 +66,32 @@
                     @foreach ($users as $user)
                         <tr class="text-secondary font-weight-bold text-sm">
                             <td>
-                                {{$user->cedula}}
+                                {{ $user->cedula }}
                             </td>
                             <td>
-                                {{$user->name}}-{{ $user->last_name }}
+                                {{ $user->name }}-{{ $user->last_name }}
                             </td>
                             <th>
-                                {{$user?->store?->name}}
+                                {{ $user?->store?->name }}
                             </th>
                             <td>
-                                {{$user->created_at}}
-                            </td>                               
-                            
+                                {{ $user->created_at }}
+                            </td>
+
                             <td width="4px">
+
                                 <div class="btn-group">
+                                    @can('users.edit')
                                         <a class="btn btn-default btn-sm"
                                             style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
-                                            href=" {{ route('users.edit', $user) }} "><i
-                                                class="fas fa-edit text-blue"></i>
+                                            href=" {{ route('users.edit', $user) }} "><i class="fas fa-edit text-blue"></i>
                                         </a>
+                                    @endcan
+                                    @can('users.destroy')
                                         <a type="button" class="btn btn-default btn-sm"
                                             style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;">
-                                            <form class="formulario-eliminar"
-                                                action="{{ route('users.destroy', $user) }}" method="POST">
+                                            <form class="formulario-eliminar" action="{{ route('users.destroy', $user) }}"
+                                                method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit"
@@ -100,6 +99,7 @@
                                                         class="fas fa-trash"></i></button>
                                             </form>
                                         </a>
+                                    @endcan
                                 </div>
                             </td>
                         </tr>

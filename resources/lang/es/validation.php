@@ -152,7 +152,8 @@ return [
         'store_id' => 'tienda',
         'category_id' => 'categoria',
         'incidence_id' => 'incidencia',
-        'description' => 'descripción'
+        'description' => 'descripción',
+        'type' => 'tipo'
      ],
 
 ];

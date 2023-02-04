@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('category_id')->references('id')->on('categories');
             $table->foreignId('incidence_id')->references('id')->on('incidences');
-            $table->foreignId('status_id')->references('id')->on('status');
+            $table->foreignId('status_id')->references('id')->on('status')->nullable()->default(1);
             $table->text('description');
             $table->timestamps();
         });

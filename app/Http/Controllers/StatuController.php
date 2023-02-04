@@ -8,18 +8,24 @@ use App\Models\Statu;
 
 class StatuController extends Controller
 {
-   
+    public function __construct()
+    {
+        $this->middleware('can:status.index')->only('index');
+        $this->middleware('can:status.create')->only('create','store');
+        $this->middleware('can:status.edit')->only('edit','update');
+        $this->middleware('can:status.destroy')->only('destroy');
+
+    }
 
     public function index()
     {
-        $Status = Statu::all();
 
-        return view ('Status.index', compact('Status'));
+        return view ('status.index');
     }
 
     public function create()
     {
-        return view ('Status.create');
+        return view ('status.create');
         
     }
 
@@ -27,37 +33,37 @@ class StatuController extends Controller
     {
         $request->validate([
             'description' => 'required',
-            'slug' => 'required|unique:Status',
+            'slug' => 'required|unique:status',
             'type' => 'required'
         ]);
 
         Statu::create($request->all());
 
-        return redirect()->route('Status.index')->with('success', 'status se creo con exito...');
+        return redirect()->route('status.index')->with('success', 'El Estatus se creo con exito...');
     }
 
-    public function edit(Statu $Statu)
+    public function edit(Statu $status)
     {
-        return view ('Status.edit', compact('Statu'));
+        return view ('status.edit', compact('status'));
         
     }
 
-    public function update(Request $request,Statu  $Statu)
+    public function update(Request $request,Statu  $status)
     {
         $request->validate([
             'description' => 'required',
-            'slug' => "required|unique:Status,slug,$Statu->id",
+            'slug' => "required|unique:status,slug,$status->id",
             'type' => 'required'
         ]);
 
-        $Statu->update($request->all());
-        return redirect()->route('Status.index', $Statu)->with('success', 'status se actualizó con exito...');
+        $status->update($request->all());
+        return redirect()->route('status.index', $status)->with('success', 'El Estatus se actualizó con exito...');
     }
 
-    public function destroy(Statu $Statu)
+    public function destroy(Statu $status)
     {
-        $Statu->delete();
+        $status->delete();
 
-        return redirect()->route('Status.index')->with('success', 'status se eliminó con exito...');
+        return redirect()->route('status.index')->with('success', 'El Estatus se eliminó con exito...');
     }
 }

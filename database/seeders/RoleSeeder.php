@@ -202,5 +202,33 @@ class RoleSeeder extends Seeder
             'name'        => 'roles.destroy',
             'description' => 'Eliminar roles'
         ])->syncRoles([$role1]);
+
+
+
+        //status
+        Permission::create([
+            'name'        => 'status.index',
+            'description' => 'Ver listado de estatus'
+        ])->syncRoles([$role1]);
+
+        Permission::create([
+            'name'        => 'status.create',
+            'description' => 'Crear estatus'
+        ])->syncRoles([$role1]);
+
+        Permission::create([
+            'name'        => 'status.edit',
+            'description' => 'Editar estatus'
+        ])->syncRoles([$role1]);
+
+        Permission::create([
+            'name'        => 'status.update',
+            'description' => 'Crear estatus'
+        ])->syncRoles([$role1]);
+
+        Permission::create([
+            'name'        => 'status.destroy',
+            'description' => 'Eliminar estatus'
+        ])->syncRoles([$role1]);
     }
 }

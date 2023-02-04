@@ -8,14 +8,14 @@ use App\Models\Incidence;
 
 class IncidenceController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('can:incidences.index')->only('index');
-    //     $this->middleware('can:incidences.create')->only('create','store');
-    //     $this->middleware('can:incidences.edit')->only('edit','update');
-    //     $this->middleware('can:incidences.destroy')->only('destroy');
+    public function __construct()
+    {
+        $this->middleware('can:incidences.index')->only('index');
+        $this->middleware('can:incidences.create')->only('create','store');
+        $this->middleware('can:incidences.edit')->only('edit','update');
+        $this->middleware('can:incidences.destroy')->only('destroy');
 
-    // }
+    }
 
     public function index()
     {

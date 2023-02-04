@@ -9,13 +9,9 @@ class Statu extends Model
 {
     use HasFactory;
     protected $fillable = ['description', 'slug','type'];
+    
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
     }
 }

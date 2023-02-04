@@ -23,7 +23,7 @@
                 {{-- <form method="POST" action="" class="form2" id="login"> --}}
                 @csrf
                 <div class="logo_login"><img src="img/loo3.png" width="620px" alt=""></div>
-                
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -59,11 +59,20 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            {!! Form::label('store_id', 'Tienda : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
-                            {!! Form::select('store_id', $stores, null, [
+                            {{-- {!! Form::label('store_id', 'Tienda : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span> --}}
+                            {{-- {!! Form::select('store_id', $stores, null, [
                                 'class' => 'form__input sele select2 ' . ($errors->has('store_id') ? ' is-invalid' : ''),
                                 'placeholder' => '',
-                            ]) !!}
+                            ]) !!} --}}
+                            <label for="store_id" class="text-navy">Tienda :</label>
+
+                            <select class="form-control  selectpicker select2" name="store_id" id="store_id"
+                                data-live-search="true">
+                                <option value="0">Seleccione una opción</option>
+                                @foreach ($stores as $store)
+                                    <option value="{{ $store->id }}">{{ $store->name }}</option>
+                                @endforeach
+                            </select>
                             @error('store_id')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
