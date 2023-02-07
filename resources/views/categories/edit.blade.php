@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Categoria')
+@section('title', 'MAKRO | Editar Categoria')
 
 @section('content_header')
 

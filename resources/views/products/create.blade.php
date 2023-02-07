@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Registrar incidencia')
+@section('title', 'MAKRO | Registrar incidencia')
 
 @section('content_header')
     <x-card-header class="">

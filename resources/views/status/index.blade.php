@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Lista de estatus')
+@section('title', 'MAKRO | Lista de estatus')
 
 @section('content_header')
 

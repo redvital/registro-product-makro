@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\LogSistema;
 
 class CategoryController extends Controller
 {
@@ -19,6 +20,12 @@ class CategoryController extends Controller
 
     public function index()
     {
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha ingresado a ver la lista de categorias: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
+
         $categories = Category::all();
 
         return view ('categories.index', compact('categories'));
@@ -26,6 +33,11 @@ class CategoryController extends Controller
 
     public function create()
     {
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha ingresado al formulario para registrar una nueva categoria: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
         return view ('categories.create');
         
     }
@@ -40,11 +52,22 @@ class CategoryController extends Controller
 
         Category::create($request->all());
 
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha  registrado una nueva categoria: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
+
         return redirect()->route('categories.index')->with('success', 'La categoria se creo con exito...');
     }
 
     public function edit(Category $category)
     {
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha ingresado al formulario para editar una categoria: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
         return view ('categories.edit', compact('category'));
         
     }
@@ -59,12 +82,25 @@ class CategoryController extends Controller
         ]);
 
         $category->update($request->all());
+
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha actualizado una categoria: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
+
         return redirect()->route('categories.index', $category)->with('success', 'La categoria se actualizó con exito...');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
+
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha eliminado una categoria: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
 
         return redirect()->route('categories.index')->with('success', 'La categoria se eliminó con exito...');
     }

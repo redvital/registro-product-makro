@@ -79,7 +79,7 @@
                                 <i class="fas fa-sort float-right mt-1"></i>
                             @endif
                         </th>
-                        <th>
+                        <th class="text-center">
                             Estatus
                         </th>
                         <th>
@@ -93,27 +93,46 @@
                     @foreach ($products as $product)
                         <tr class="text-secondary font-weight-bold text-sm">
                             <td>
-                                {{ $product->id }}
+                                <a href="{{ route('products.show', $product) }}">
+                                    {{ $product->id }}
+                                </a>
                             </td>
                             <td>
-                                {{ $product->name }}
+                                <a href="{{ route('products.show', $product) }}">
+                                    {{ $product->name }}
+                                </a>
+
                             </td>
                             <td>
-                                {{ $product->sku }}
+                                <a href="{{ route('products.show', $product) }}">
+                                    {{ $product->sku }}
+                                </a>
+
                             </td>
                             <td>
-                                {{ $product->store->name }}
+                                <a href="{{ route('products.show', $product) }}">
+                                    {{ $product->store->name }}
+                                </a>
+
                             </td>
 
                             <td>
-                                {{ $product->incidence->type }}
+                                <a href="{{ route('products.show', $product) }}">
+                                    {{ $product->incidence->type }}
+                                </a>
+
                             </td>
-                            <td>
+                            <td class="text-center">
                                 @if ($product->status_id == 1)
-                                    <span class="badge badge-warning shadow-sm elevation-2">{{$product->status->type}}</span>
-                                
-                                @else
-                                {{$product->status->type}}
+                                    <span class="elevation-4 badge badge-warning">{{ $product->status->type }}</span>
+                                @elseif ($product->status_id == 2)
+                                    <span class="elevation-4 badge badge-info ">{{ $product->status->type }}</span>
+                                @elseif ($product->status_id == 3)
+                                    <span class="elevation-4 badge badge-primary ">{{ $product->status->type }}</span>
+                                @elseif ($product->status_id == 4)
+                                    <span class="elevation-4 badge badge-olive ">{{ $product->status->type }}</span>
+                                @elseif ($product->status_id == 5)
+                                    <span class="elevation-4 badge badge-success ">{{ $product->status->type }}</span>
                                 @endif
                             </td>
                             <td>

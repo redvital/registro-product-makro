@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\LogSistema;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
@@ -21,11 +22,22 @@ class ProductController extends Controller
 
     public function index()
     {
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha ingresado a ver la lista de incidencias reportadas: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
         return view ('products.index');
     }
 
     public function create()
     {
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha ingresado al formulario para reportar una nueva incidencia: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
+
         $stores  = DB::table('stores')->pluck('name' , 'id');
         $categories  = DB::table('categories')->pluck('name' , 'id');
         $incidences  = DB::table('incidences')->pluck('type' , 'id');
@@ -73,6 +85,12 @@ class ProductController extends Controller
             ]);
         }
 
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha  reportado una nueva incidencia: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
+
         return redirect()->route('products.index')->with('success', 'La incidencia se creo con exito...');
     }
 
@@ -81,22 +99,21 @@ class ProductController extends Controller
         $stores  = DB::table('stores')->pluck('name' , 'id');
         $categories  = DB::table('categories')->pluck('name' , 'id');
         $incidences  = DB::table('incidences')->pluck('type' , 'id');
-        return view ('products.edit', compact('product','stores','categories','incidences'));
+        $status  = DB::table('status')->pluck('type' , 'id');
+
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha ingresado al formulario para editar una incidencia reportada: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
+        return view ('products.edit', compact('product','stores','categories','incidences','status'));
     }
 
     public function update(Request $request,Product  $product)
     {
         // dd($product);
 
-        $request->validate([
-            'name' => 'required',
-            'sku' => 'required',
-            'slug' => 'required|max:255|unique:products,slug,'.$product->id,
-            'store_id' => 'required|exists:stores,id',
-            'category_id' => 'required|exists:categories,id',
-            'incidence_id' => 'required|exists:incidences,id',
-            'description' => 'required',
-        ]);
+        
         $product->update($request->all());
 
         if ($request->file('file')) {
@@ -113,6 +130,12 @@ class ProductController extends Controller
                 ]);
             }
         }
+        
+        $log = new LogSistema();
+
+        $log->user_id = auth()->user()->id;
+        $log->tx_descripcion = 'El usuario: ' . auth()->user()->name .'-'. auth()->user()->last_name . ' Ha actualizado una incidencia reportada: ' . date('H:m:i') . ' del día: ' . date('d/m/Y');
+        $log->save();
 
         return redirect()->route('products.index')->with('success', 'La incidencia se actualizó con exito...');
     }

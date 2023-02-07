@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Incidencia')
+@section('title', 'MAKRO | Crear Incidencia')
 @section('content_header')
 
 <x-card-header class="mt-2">

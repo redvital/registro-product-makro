@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'EDITAR ROL')
+@section('title', 'MAKRO | EDITAR ROL')
 
 @section('content_header')
 <x-card-header>

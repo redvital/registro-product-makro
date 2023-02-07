@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'ROLES Y PERMISOS')
+@section('title', 'MAKRO | ROLES Y PERMISOS')
 
 @section('content_header')
 

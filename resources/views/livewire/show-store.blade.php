@@ -57,6 +57,9 @@
                             @endif
                         </th>
                         <th>
+                            Por atender
+                        </th>
+                        <th>
                             Registro
                         </th>
                         <th colspan="2"></th>
@@ -78,6 +81,15 @@
                                 <a href=" {{ route('stores.incidence-store', $store) }} ">
                                     {{ $store->address }}
                                 </a>
+                            </td>
+                            <td>
+                                @if ($store->products_count)
+                                    
+                                <span class="badge elevation-4 badge-warning">{{ $store->products_count}}</span>   
+                                @else       
+                                <span class="badge elevation-4 badge-olive">{{ $store->products_count}}</span>   
+
+                                @endif
                             </td>
                             <td>
                                 {{ $store->created_at }}

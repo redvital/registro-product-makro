@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'CREAR NUEVO ROL')
+@section('title', 'MAKRO | CREAR NUEVO ROL')
 @section('content_header')
     <x-card-header>
         <h3 class="text-white">Registrar nuevo rol</h3>

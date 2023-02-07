@@ -82,4 +82,9 @@ class User extends Authenticatable
     public function roleable(){
         return $this->morphTo();
     }
+    
+    public function logins()
+    {
+        return $this->hasMany(Login::class);
+    }
 }

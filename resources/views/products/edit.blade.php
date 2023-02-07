@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar incidencia')
+@section('title', 'MAKRO | Editar incidencia')
 
 @section('content_header')
 
@@ -15,45 +15,23 @@
                 class="fas fa-reply mt-2 px-3"></i>
         </a>
         <br>
-        {!! Form::model($product, ['route' => ['products.update', $product],'files' => true, 'method' => 'PUT']) !!}
-        @include('products.partials.form')
+        {!! Form::model($product, ['route' => ['products.update', $product],'files' => true, 'method' => 'PUT','autocomplete' => 'off']) !!}
+        
+        <div class="col-md-8">
+            <div class="form-group">
+                {!! Form::label('status_id', 'Estatus : ', ['class' => 'text-navy']) !!} <span
+                    class="text-danger">*</span>
+                {!! Form::select('status_id', $status, null, [
+                'class' => 'form-control select2' . ($errors->has('status_id') ? ' is-invalid' : ''),
+                'placeholder' => ''
+                ]) !!}
+                {!! $errors->first('status_id', ' <div class="invalid-feedback text-center">
+                    <strong>:message</strong>
+                </div>') !!}
+
+            </div>
+        </div>
         {!! Form::submit('Actualizar Registro', ['class' => 'btn bg-navy float-right']) !!}
         {!! Form::close() !!}
     </x-card-body>
 @stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-
-    <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("#name").stringToSlug({
-                setEvents: 'keyup keydown blur',
-                getPut: '#slug',
-                space: '-'
-            });
-        });
-
-        //cambiar imagen
-        document.getElementById("file").addEventListener('change', cambiarImagen);
-
-        function cambiarImagen(event) {
-            var file = event.target.files[0];
-
-            var reader = new FileReader();
-            reader.onload = (event) => {
-                document.getElementById("pictures").setAttribute('src', event.target.result);
-            }
-
-            reader.readAsDataURL(file);
-
-        }
-    </script>
-
-
-@endsection

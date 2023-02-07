@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Usuarios')
+@section('title', 'MAKRO | Usuarios')
 
 
 @section('content_header')

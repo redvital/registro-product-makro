@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StatuController;
 use App\Http\Controllers\IncidenceController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogsistemaController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
@@ -46,3 +48,6 @@ Route::resource('roles', RoleController::class )->names('roles');
 Route::resource('authorizations', AuthorizationController::class )->names('authorizations');
 
 Route::get('stores/incidence-store/{store}', [StoreController::class, 'incidencestore' ])->name('stores.incidence-store');
+Route::resource('logins', LoginController::class)->names('logins');
+Route::resource('logs', LogsistemaController::class)->names('logs');
+

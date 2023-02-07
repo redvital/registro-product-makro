@@ -366,12 +366,27 @@ return [
                     'can' => 'roles.index',
                 ],
                 [
+                    'text' => 'Sesiones',
+                    'route'  => 'logins.index',
+                    'icon' => 'fas fa-fw fa-traffic-light',
+                    'active' => ['logins*'],
+                    'can' => 'logins.index',
+                ],
+                [
+                    'text' => 'Auditoria',
+                    'route'  => 'logs.index',
+                    'icon' => 'fas fa-fw fa-clipboard-list',
+                    'active' => ['logs*'],
+                    'can' => 'logs.index',
+                ],
+                [
                     'text' => 'Usuarios',
                     'route'  => 'users.index',
                     'icon' => 'fas fa-fw fa-users',
                     'active' => ['users*'],
                     'can' => 'users.index',
                 ],
+
             ],
         ],
     ],

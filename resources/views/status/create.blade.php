@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Estatus')
+@section('title', 'MAKRO | Crear Estatus')
 @section('content_header')
 
 <x-card-header class="mt-2">

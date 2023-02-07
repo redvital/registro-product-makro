@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Categoria')
+@section('title', 'MAKRO | Crear Categoria')
 
 @section('content_header')
 <x-card-header class="">
