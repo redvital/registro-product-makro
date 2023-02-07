@@ -31,7 +31,7 @@ class RoleSeeder extends Seeder
         ])->syncRoles([$role1]);
 
         Permission::create([
-            'name'        => 'logns.index',
+            'name'        => 'logins.index',
             'description' => 'Ver listado de sesiones'
         ])->syncRoles([$role1]);
 
@@ -134,7 +134,7 @@ class RoleSeeder extends Seeder
         Permission::create([
             'name'        => 'stores.index',
             'description' => 'Ver listado de tiendas'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
         Permission::create([
             'name'        => 'stores.create',
@@ -148,7 +148,7 @@ class RoleSeeder extends Seeder
         Permission::create([
             'name'        => 'stores.incidence-store',
             'description' => 'Ver incidencias por tiendas'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
         Permission::create([
             'name'        => 'stores.update',
@@ -174,12 +174,12 @@ class RoleSeeder extends Seeder
         Permission::create([
             'name'        => 'products.edit',
             'description' => 'Editar productos'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
         Permission::create([
             'name'        => 'products.update',
             'description' => 'Crear productos'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
         Permission::create([
             'name'        => 'products.destroy',

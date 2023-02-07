@@ -30,8 +30,8 @@ return [
     |
     */
 
-    'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_ico_only' => true,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -112,8 +112,7 @@ return [
             'path' => 'vendor/adminlte/dist/img/Makro_logo.svg.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 160,
-            'height' => 60,
+            'width' => 180,
         ],
     ],
 

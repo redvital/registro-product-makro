@@ -18,6 +18,8 @@
             <table class="table table-striped table-hover text-nowrap">
                 <thead>
                     <tr class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
+                        <th colspan="1"></th>
+
                         <th scope="col" role="button" wire:click="order('id')">
                             Nro.
                             @if ($sort == 'id')
@@ -92,6 +94,13 @@
                 <tbody>
                     @foreach ($products as $product)
                         <tr class="text-secondary font-weight-bold text-sm">
+                            <td>
+                                <a class="btn btn-default btn-sm elevation-4"
+                                    style="border-color: rgb(158, 157, 157);"
+                                    href=" {{ route('products.show', $product) }}"><i
+                                        class="fas fa-eye text-warning"></i>
+                                </a>
+                            </td>
                             <td>
                                 <a href="{{ route('products.show', $product) }}">
                                     {{ $product->id }}

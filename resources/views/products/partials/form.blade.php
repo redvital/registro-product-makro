@@ -9,8 +9,7 @@
                     {!! Form::label('name', 'Nombre del producto : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
                     {!! Form::text('name', null, [
                         'class' => 'form-control',
-                        'placeholder' => 'Ingrese el nombre del
-                                        producto',
+                        'placeholder' => 'Ingrese el nombre del producto',
                     ]) !!}
                     <input type="hidden" name="slug" id="slug">
                     @error('name')
@@ -23,8 +22,7 @@
                     {!! Form::label('sku', 'SKU del producto : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
                     {!! Form::text('sku', null, [
                         'class' => 'form-control',
-                        'placeholder' => 'Ingrese el sku del
-                                        producto',
+                        'placeholder' => 'Ingrese el sku del producto',
                     ]) !!}
 
                     @error('sku')
