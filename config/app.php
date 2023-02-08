@@ -200,6 +200,8 @@ return [
         // New dependency
         Spatie\Permission\PermissionServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        App\Providers\LaravelBackupPanelServiceProvider::class,
+
 
     ],
 

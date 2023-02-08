@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthorizationController;
+use App\Http\Controllers\BackupController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StatuController;
@@ -50,4 +51,5 @@ Route::resource('authorizations', AuthorizationController::class )->names('autho
 Route::get('stores/incidence-store/{store}', [StoreController::class, 'incidencestore' ])->name('stores.incidence-store');
 Route::resource('logins', LoginController::class)->names('logins');
 Route::resource('logs', LogsistemaController::class)->names('logs');
+Route::resource('backups', BackupController::class)->names('backups');
 

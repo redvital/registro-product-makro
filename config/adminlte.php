@@ -385,6 +385,13 @@ return [
                     'active' => ['users*'],
                     'can' => 'users.index',
                 ],
+                [
+                    'text' => 'Respaldo',
+                    'route'  => 'backups.index',
+                    'icon' => 'fas fa-fw fa-cloud-download-alt',
+                    'active' => ['backups*'],
+                    'can' => 'backups.index',
+                ],
 
             ],
         ],

@@ -29,6 +29,10 @@ class RoleSeeder extends Seeder
             'name'        => 'logs.index',
             'description' => 'Ver listado de registros'
         ])->syncRoles([$role1]);
+        Permission::create([
+            'name'        => 'backups.index',
+            'description' => 'Ver listado de respaldos'
+        ])->syncRoles([$role1]);
 
         Permission::create([
             'name'        => 'logins.index',
