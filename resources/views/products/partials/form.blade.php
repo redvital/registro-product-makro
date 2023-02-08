@@ -119,24 +119,27 @@
     </div>
 
     <div class="col-md-4">
-        <div class="col">
-            <div class="image image-wrapper">
-                @isset($product->image)
-                    <img id="picture" class="" src="{{ Storage::url($product->image->url) }}" alt=""
-                        srcset="">
-                @else
-                    <img id="picture" class="" src="{{ asset(' img/nodisponible.jpg') }}" width="300px"
-                        alt="" srcset="">
-                @endisset
+        <div class="row mb-3">
+            <div class="col">
+                <div class="image image-wrapper">
+                    @isset ($product->image)
+                        <img id="picture" class="" src="{{Storage::url($product->image->url)}}" alt="" srcset="">
+                    @else
+                        <img id="picture" class="" src="https://cdn.pixabay.com/photo/2016/11/19/18/57/godafoss-1840758_960_720.jpg" alt="" srcset="">
+                    @endisset
+                </div>
             </div>
-            <div class="form-group">
-                {!! Form::label('file', 'Imagen') !!}
-                {!! Form::file('file', ['class' => 'form-control-file', 'accept' => 'image/*']) !!}
-            </div>
-            @error('status')
+            <div class="col">
+                <div class="form-group">
+                    {!! Form::label('file', 'Imagen') !!}
+                    {!! Form::file('file', ['class' => 'form-control-file', 'accept' => 'image/*']) !!}
+                </div>
+                @error('status')
                 <br>
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
+                <small class="text-danger">{{$message}}</small>
+                @enderror
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem optio, commodi enim quam, eaque id officia eos ipsum quidem saepe minima totam impedit adipisci illo vero? Rem ipsam animi sequi.</p>
+            </div>
         </div>
     </div>
 </div>

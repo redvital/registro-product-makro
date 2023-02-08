@@ -153,7 +153,9 @@ return [
         'category_id' => 'categoria',
         'incidence_id' => 'incidencia',
         'description' => 'descripción',
-        'type' => 'tipo'
+        'type' => 'tipo',
+        'current_password' => 'contraseña anterior',
+        'password' => 'contraseña'
      ],
 
 ];

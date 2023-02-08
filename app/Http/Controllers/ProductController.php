@@ -61,6 +61,7 @@ class ProductController extends Controller
         // dd($request);
         $data = $request->validate([
             'name' => 'required',
+            'file' => 'nullable|image',
             'slug' => 'required|unique:products',
             'store_id' => 'required|not_in:0',
             'category_id' => 'required|not_in:0',
