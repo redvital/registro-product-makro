@@ -18,7 +18,7 @@
             <table class="table table-striped table-hover text-nowrap">
                 <thead>
                     <tr class="text-uppercase text-secondary text-sm font-weight-bolder opacity-7 ps-2">
-                        <th colspan="1"></th>
+                       
 
                         <th scope="col" role="button" wire:click="order('id')">
                             Nro.
@@ -94,13 +94,7 @@
                 <tbody>
                     @foreach ($products as $product)
                         <tr class="text-secondary font-weight-bold text-sm">
-                            <td>
-                                <a class="btn btn-default btn-sm elevation-4"
-                                    style="border-color: rgb(158, 157, 157);"
-                                    href=" {{ route('products.show', $product) }}"><i
-                                        class="fas fa-eye text-warning"></i>
-                                </a>
-                            </td>
+                           
                             <td>
                                 <a href="{{ route('products.show', $product) }}">
                                     {{ $product->id }}
@@ -148,29 +142,29 @@
                                 {{ $product->created_at }}
                             </td>
 
+                           
+
+
                             <td width="4px">
                                 <div class="btn-group">
-                                    @can('products.edit')
-                                        <a class="btn btn-default btn-sm"
-                                            style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
-                                            href=" {{ route('products.edit', $product) }} "><i
-                                                class="fas fa-edit text-blue"></i>
-                                        </a>
-                                    @endcan
-                                    @can('products.destroy')
-                                        {{-- <a type="button" class="btn btn-default btn-sm"
-                                            style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;">
-                                            <form class="formulario-eliminar"
-                                                action="{{ route('products.destroy', $product) }}" method="POST">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit"
-                                                    class="btn btn-default btn-sm border-0 p-0 text-danger"><i
-                                                        class="fas fa-trash"></i></button>
-                                            </form>
-                                        </a> --}}
-                                    @endcan
-                                </div>
+                              
+                                    <a class="btn btn-default btn-sm"
+                                        style="border-color: rgb(158, 157, 157); border-top-right-radius: 0px; border-bottom-right-radius: 0px;"
+                                        href=" {{ route('products.show', $product) }} "><i
+                                            class="fas fa-eye text-yellow"></i>
+                                    </a>
+                           
+
+                                @can('products.edit')
+                                    <a class="btn btn-default btn-sm"
+                                        style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
+                                        href=" {{ route('products.edit', $product) }} "><i
+                                            class="fas fa-edit text-blue"></i>
+                                    </a>
+                                @endcan
+                               
+                            </div>
+
                             </td>
                         </tr>
                     @endforeach
