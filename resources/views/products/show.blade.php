@@ -64,20 +64,25 @@
                 <div class="col-sm-5 mt-6 invoice-col" bis_skin_checked="1">
                     <div class="view-img">
                         <div class="image image-wrapper">
-
-                            <img class="w-full h-80 object-cover object-center"
-                                src="{{ Storage::url($product->image->url) }}" alt="">
+                            @isset($product->image)
+                                <img id="picture" class="" src="{{ Storage::url($product->image->url) }}" alt=""
+                                    srcset="">
+                            @else
+                                <img id="picture" class="" src="https://via.placeholder.com/400x230" alt=""
+                                    srcset="">
+                            @endisset
                         </div>
                     </div>
                 </div>
-
             </div>
 
+        </div>
 
-            <hr>
+
+        <hr>
 
 
-            {{-- <div class="row no-print" bis_skin_checked="1">
+        {{-- <div class="row no-print" bis_skin_checked="1">
                 <div class="col-12" bis_skin_checked="1">
                     <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i
                             class="fas fa-print"></i> Print</a>
