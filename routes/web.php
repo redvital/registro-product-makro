@@ -39,12 +39,12 @@ Route::middleware([
 });
 
 // Route::resource('categories', [CategoryController::class])->names('categories');
-Route::resource('categories', CategoryController::class )->except('show')->names('categories');
-Route::resource('stores', StoreController::class )->except('show')->names('stores');
-Route::resource('incidences', IncidenceController::class )->except('show')->names('incidences');
-Route::resource('status', StatuController::class )->names('status');
-Route::resource('products', ProductController::class )->names('products');
-Route::resource('users', UserController::class )->names('users');
+Route::resource('categorias', CategoryController::class )->except('show')->names('categories');
+Route::resource('tiendas', StoreController::class )->except('show')->names('stores');
+Route::resource('incidencias', IncidenceController::class )->except('show')->names('incidences');
+Route::resource('estatus', StatuController::class )->names('status');
+Route::resource('productos', ProductController::class )->names('products');
+Route::resource('usuarios', UserController::class )->names('users');
 Route::resource('roles', RoleController::class )->names('roles');
 Route::resource('authorizations', AuthorizationController::class )->names('authorizations');
 
