@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthorizationController;
-use App\Http\Controllers\BackupController;
+use App\Http\Controllers\BackupsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DepartamentController;
 use App\Http\Controllers\StatuController;
 use App\Http\Controllers\IncidenceController;
 use App\Http\Controllers\LoginController;
@@ -39,17 +40,18 @@ Route::middleware([
 });
 
 // Route::resource('categories', [CategoryController::class])->names('categories');
-Route::resource('categorias', CategoryController::class )->except('show')->names('categories');
-Route::resource('tiendas', StoreController::class )->except('show')->names('stores');
-Route::resource('incidencias', IncidenceController::class )->except('show')->names('incidences');
-Route::resource('estatus', StatuController::class )->names('status');
-Route::resource('productos', ProductController::class )->names('products');
-Route::resource('usuarios', UserController::class )->names('users');
+Route::resource('categories', CategoryController::class )->except('show')->names('categories');
+Route::resource('departaments', DepartamentController::class )->except('show')->names('departaments');
+Route::resource('stores', StoreController::class )->except('show')->names('stores');
+Route::resource('incidences', IncidenceController::class )->except('show')->names('incidences');
+Route::resource('status', StatuController::class )->names('status');
+Route::resource('products', ProductController::class )->names('products');
+Route::resource('users', UserController::class )->names('users');
 Route::resource('roles', RoleController::class )->names('roles');
 Route::resource('authorizations', AuthorizationController::class )->names('authorizations');
 
 Route::get('stores/incidence-store/{store}', [StoreController::class, 'incidencestore' ])->name('stores.incidence-store');
 Route::resource('logins', LoginController::class)->names('logins');
 Route::resource('logs', LogsistemaController::class)->names('logs');
-Route::resource('backups', BackupController::class)->names('backups');
+Route::resource('backups', BackupsController::class)->names('backups');
 

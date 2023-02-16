@@ -316,25 +316,11 @@ return [
             'icon'    => 'fas fa-fw fa-cogs',
             'submenu' => [
                 [
-                    'text' => 'Incidencias',
-                    'route'  => 'incidences.index',
-                    'icon' => 'fas fa-fw fa-exclamation-triangle',
-                    'active' => ['incidences*'],
-                    'can' => 'incidences.index',
-                ],
-                [
                     'text' => 'Reportar incidencia',
                     'route'  => 'products.index',
                     'icon' => 'fab fa-fw fa-product-hunt',
                     'active' => ['products*'],
                     'can' => 'products.index',
-                ],
-                [
-                    'text' => 'Tiendas',
-                    'route'  => 'stores.index',
-                    'icon' => 'fas fa-fw fa-store',
-                    'active' => ['stores*'],
-                    'can' => 'stores.index',
                 ],
             ],
         ],
@@ -356,6 +342,28 @@ return [
                     'icon' => 'fas fa-fw fa-stream',
                     'active' => ['categories*'],
                     'can' => 'categories.index',
+                ],
+                
+                [
+                    'text' => 'Departamentos',
+                    'route'  => 'departaments.index',
+                    'icon' => 'fas fa-fw fa-stream',
+                    'active' => ['departaments*'],
+                    'can' => 'departaments.index',
+                ],
+                [
+                    'text' => 'Tiendas',
+                    'route'  => 'stores.index',
+                    'icon' => 'fas fa-fw fa-store',
+                    'active' => ['stores*'],
+                    'can' => 'stores.index',
+                ],
+                [
+                    'text' => 'Tipos de Incidencias',
+                    'route'  => 'incidences.index',
+                    'icon' => 'fas fa-fw fa-exclamation-triangle',
+                    'active' => ['incidences*'],
+                    'can' => 'incidences.index',
                 ],
                 [
                     'text' => 'Roles',
@@ -385,13 +393,13 @@ return [
                     'active' => ['users*'],
                     'can' => 'users.index',
                 ],
-                [
-                    'text' => 'Respaldo',
-                    'route'  => 'backups.index',
-                    'icon' => 'fas fa-fw fa-cloud-download-alt',
-                    'active' => ['backups*'],
-                    'can' => 'backups.index',
-                ],
+                // [
+                //     'text' => 'Respaldo',
+                //     'route'  => 'backups.index',
+                //     'icon' => 'fas fa-fw fa-cloud-download-alt',
+                //     'active' => ['backups*'],
+                //     'can' => 'backups.index',
+                // ],
 
             ],
         ],

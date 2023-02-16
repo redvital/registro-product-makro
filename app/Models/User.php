@@ -34,6 +34,7 @@ class User extends Authenticatable
         'email',
         'password',
         'store_id',
+        'departament_id',
     ];
 
     /**
@@ -75,10 +76,15 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Store::class);
     }
+    public function departament()
+    {
+        return $this->belongsTo(Departament::class);
+    }
     public function products()
     {
         return $this->hasMany(Product::class);
     }
+    
     public function roleable(){
         return $this->morphTo();
     }

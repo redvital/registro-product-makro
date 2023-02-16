@@ -151,8 +151,8 @@
                             <td width="4px">
                                 <div class="btn-group">
                                     @can('products.edit')
-                                        <a class="btn btn-default btn-sm"
-                                            style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
+                                        <a class="btn btn-default btn-sm elevation-4"
+                                            style="border-color: rgb(158, 157, 157);"
                                             href=" {{ route('products.edit', $product) }} "><i
                                                 class="fas fa-edit text-blue"></i>
                                         </a>
