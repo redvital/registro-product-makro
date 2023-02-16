@@ -124,7 +124,7 @@ class ProductController extends Controller
             'imageUrl'=>$product->image ? Storage::url($product->image->url) : null,
         ];
 
-        Mail::to('juanjosexdd7@gmail.com')->send(new IncidenceMail($mailData));
+        Mail::to('incidencias@dynamics.life')->send(new IncidenceMail($mailData));
 
         return redirect()->route('products.index')->with('success', 'La incidencia se creo con exito...');
     }
