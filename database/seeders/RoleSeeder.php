@@ -78,29 +78,60 @@ class RoleSeeder extends Seeder
             'name'        => 'authorizations.destroy',
             'description' => 'Eliminar autorizacion'
         ])->syncRoles([$role1]);
+
+        //departaments
+        //Categories
+        Permission::create([
+            'name'        => 'departaments.index',
+            'description' => 'Ver listado de departamentos'
+        ])->syncRoles([$role1]);
+
+
+        Permission::create([
+            'name'        => 'departaments.create',
+            'description' => 'Crear departamentos'
+        ])->syncRoles([$role1]);
+
+
+        Permission::create([
+            'name'        => 'departaments.edit',
+            'description' => 'Editar departamentos'
+        ])->syncRoles([$role1]);
+
+
+        Permission::create([
+            'name'        => 'departaments.update',
+            'description' => 'Crear departamentos'
+        ])->syncRoles([$role1]);
+
+
+        Permission::create([
+            'name'        => 'departaments.destroy',
+            'description' => 'Eliminar departamentos'
+        ])->syncRoles([$role1]);
         //Categories
         Permission::create([
             'name'        => 'categories.index',
             'description' => 'Ver listado de categorias'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
 
         Permission::create([
             'name'        => 'categories.create',
             'description' => 'Crear categorias'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
 
         Permission::create([
             'name'        => 'categories.edit',
             'description' => 'Editar categorias'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
 
         Permission::create([
             'name'        => 'categories.update',
             'description' => 'Crear categorias'
-        ])->syncRoles([$role1, $role2]);
+        ])->syncRoles([$role1]);
 
 
         Permission::create([

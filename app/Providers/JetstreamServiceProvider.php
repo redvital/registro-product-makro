@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Actions\Jetstream\DeleteUser;
+use App\Models\Departament;
 use App\Models\Store;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
@@ -29,8 +30,9 @@ class JetstreamServiceProvider extends ServiceProvider
         
         Fortify::registerView(function () {
             $stores = Store::select('stores.id', 'stores.name')->get();
+            $departaments = Departament::select('departaments.id', 'departaments.name')->get();
 
-            return view('auth.register', compact('stores'));
+            return view('auth.register', compact('stores','departaments'));
         });    
     }
 

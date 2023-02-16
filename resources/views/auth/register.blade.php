@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('vendor/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/select2/select2-bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/icheck/skins/flat/flat.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 
@@ -26,81 +28,86 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            {!! Form::label('name', 'Nombres : ', ['class' => 'text-navy']) !!}
-                            {!! Form::text('name', null, ['class' => 'form__input']) !!}
-                            <input type="hidden" name="slug" id="slug">
-                            @error('name')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                        {!! Form::label('name', 'Nombres : ', ['class' => '']) !!}
+                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                        <input type="hidden" name="slug" id="slug">
+                        @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            {!! Form::label('name', 'Apellidos : ', ['class' => 'text-navy']) !!}
+                            {!! Form::label('name', 'Apellidos : ', ['class' => '']) !!}
                             {!! Form::text('last_name', null, [
-                                'class' => 'form__input',
+                                'class' => 'form-control',
                             ]) !!}
                             @error('last_name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            {!! Form::label('cedula', 'Cedula : ', ['class' => 'text-navy']) !!}
-                            {!! Form::text('cedula', null, ['class' => 'form__input']) !!}
-                            @error('cedula')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                        {!! Form::label('cedula', 'Cedula : ', ['class' => '']) !!}
+                        {!! Form::text('cedula', null, ['class' => 'form-control']) !!}
+                        @error('cedula')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group">
-                            {!! Form::label('store_id', 'Tienda : ', ['class' => 'text-navy']) !!}
-                            <select class="form-control  selectpicker select2" required name="store_id" id="store_id"
-                                data-live-search="true">
-                                <option value="">Seleccione una opción</option>
-                                @foreach ($stores as $store)
-                                    <option value="{{ $store->id }}">{{ $store->name }}</option>
-                                @endforeach
-                            </select>
-                            @error('store_id')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                            {!! $errors->first('store_id', ' <div class="invalid-feedback text-center"><strong>:message</strong></div>') !!}
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12>
-                        <div class="form-group">
-                        {!! Form::label('email', 'Correo : ', ['class' => 'text-navy']) !!}
-                        {!! Form::email('email', null, ['class' => 'form__input']) !!}
+                        {!! Form::label('email', 'Correo : ', ['class' => '']) !!}
+                        {!! Form::text('email', null, ['class' => 'form-control']) !!}
                         @error('email')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-                </div>
-                <div class="row">
+                    <br>
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <x-jet-label for="password" value="{{ __('Password') }}" />
-                            <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password"
-                                required autocomplete="new-password" />
-                        </div>
+                        {!! Form::label('store_id', 'Tienda : ', ['class' => '']) !!}
+                        <select class="form-control  selectpicker select2" required name="store_id" id="store_id"
+                            data-live-search="true">
+                            <option value="">Seleccione una opción</option>
+                            @foreach ($stores as $store)
+                                <option value="{{ $store->id }}">{{ $store->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('store_id')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        {!! $errors->first('store_id', ' <div class="invalid-feedback text-center"><strong>:message</strong></div>') !!}
+
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                            <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
-                        </div>
+                        {!! Form::label('departament_id', 'Departamento : ', ['class' => '']) !!}
+                        <select class="form-control  selectpicker select2" required name="departament_id"
+                            id="departament_id" data-live-search="true">
+                            <option value="">Seleccione una opción</option>
+                            @foreach ($departaments as $departament)
+                                <option value="{{ $departament->id }}">{{ $departament->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('departament_id')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        {!! $errors->first(
+                            'departament_id',
+                            ' <div class="invalid-feedback text-center"><strong>:message</strong></div>',
+                        ) !!}
+
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+
+                        <x-jet-label for="password" value="{{ __('Password :') }}" />
+                        <x-jet-input id="password" class="block form-control mt-1 w-full" type="password"
+                            name="password" required autocomplete="new-password" />
+                    </div>
+                    <div class="col-md-6">
+                        <x-jet-label for="password_confirmation" value="{{ __('Confirm Password :') }}" />
+                        <x-jet-input id="password_confirmation" class="block form-control mt-1 w-full" type="password"
+                            name="password_confirmation" required autocomplete="new-password" />
                     </div>
                 </div>
+                <br>
                 <button type="submit">Registrarme</button>
                 <a href="/login" class="form__button">Iniciar sesión</a>
 

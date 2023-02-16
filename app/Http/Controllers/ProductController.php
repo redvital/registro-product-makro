@@ -54,9 +54,11 @@ class ProductController extends Controller
     {
         $stores  = DB::table('stores')->pluck('name', 'id');
         $categories  = DB::table('categories')->pluck('name', 'id');
+        $user  = DB::table('users')->pluck('name', 'id');
         $incidences  = DB::table('incidences')->pluck('type', 'id');
         $status  = DB::table('status')->pluck('type', 'id');
-        return view('products.show', compact('stores', 'categories', 'incidences', 'product', 'status'));
+
+        return view('products.show', compact('stores', 'categories', 'incidences', 'product', 'status', 'user'));
     }
     public function store(Request $request)
     {
@@ -71,16 +73,6 @@ class ProductController extends Controller
             'incidence_id' => 'required|not_in:0',
             'description' => 'required'
         ]);
-        // $product = new Product();
-        // $product->name;
-        // $product->file;
-        // if ($request->sku) {
-        //     $product->sku;
-        // }
-        // $product->slug;
-        // $product->store_id;
-        // $product->incidence_id;
-        // $product->description;
         $product = new Product;
         $product->name = $data['name'];
         $product->sku = $data['sku'];
@@ -112,20 +104,7 @@ class ProductController extends Controller
         $log->save();
 
         // Después de guardar el producto...
-        // Obtener el nombre de la tienda asociada
-        // $storeName = Store::where('id', $request->store_id)->pluck('name');
 
-        // // Obtener el nombre de la incidencia asociada
-        // $incidenceName = Incidence::where('id', $request->incidence_id)->pluck('type');
-
-        // $mailData = [
-        //     'name' => $request->input('name'),
-        //     'sku' => $request->input('sku'),
-        //     'slug' => $request->input('slug'),
-        //     'store_id' => $request->input('store_id'),
-        //     'incidence_id' => $request->input('incidence_id'),
-        //     'description' => $request->input('description')
-        // ];
         // Obtiene el nombre de la tienda correspondiente
         $storeName = Store::findOrFail($data['store_id'])->name;
 
@@ -144,7 +123,7 @@ class ProductController extends Controller
             'description' => $product->description,
             'imageUrl'=>$product->image ? Storage::url($product->image->url) : null,
         ];
-        
+
         Mail::to('juanjosexdd7@gmail.com')->send(new IncidenceMail($mailData));
 
         return redirect()->route('products.index')->with('success', 'La incidencia se creo con exito...');

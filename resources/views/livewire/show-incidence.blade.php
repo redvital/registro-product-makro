@@ -80,23 +80,23 @@
                             </td>
 
                             <td width="4px">
-                                <div class="btn-group">
+                                <div class="btn-group elevation-4">
                                     @can('incidences.edit')
-                                        <a class="btn btn-default btn-sm"
-                                            style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
+                                        <a class="btn btn-default btn-sm "
+                                            style="border-color: rgb(158, 157, 157);"
                                             href=" {{ route('incidences.edit', $incidence) }} "><i
                                                 class="fas fa-edit text-blue"></i>
                                         </a>
                                     @endcan
                                     @can('incidences.destroy')
-                                        <a type="button" class="btn btn-default btn-sm"
+                                        <a type="button" class="btn btn-default btn-sm "
                                             style="border-color: rgb(158, 157, 157); border-top-left-radius: 0px; border-bottom-left-radius: 0px;">
                                             <form class="formulario-eliminar"
                                                 action="{{ route('incidences.destroy', $incidence) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit"
-                                                    class="btn btn-default btn-sm border-0 p-0 text-danger"><i
+                                                    class="btn btn-default btn-sm border-0 p-0  text-danger"><i
                                                         class="fas fa-trash"></i></button>
                                             </form>
                                         </a>
