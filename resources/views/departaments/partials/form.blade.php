@@ -1,6 +1,6 @@
 <div class="form-group">
     {!! Form::label('name', 'Nombre : ', ['class' => 'text-navy']) !!}
-    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la categoria']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del departamento']) !!}
     <input type="hidden" name="slug" id="slug">
     @error('name')
         <span class="text-danger">{{ $message }}</span>

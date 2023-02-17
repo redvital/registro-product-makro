@@ -119,8 +119,8 @@
 
                             </td>
                             <td>
-                                <a href="{{ route('products.show', $product) }}">
-                                    {{ $product->store->name }}
+                                <a href=" {{ route('stores.incidence-store', $product->store) }}">
+                                    {{ $product->store->name }} <i class="fa-solid fa-arrow-up-right"></i>
                                 </a>
 
                             </td>

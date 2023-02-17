@@ -9,7 +9,7 @@
     <meta name="x-apple-disable-message-reformatting">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
-    <title>Nuevo mensaje</title>
+    <title>Incidencia</title>
     <!--[if (mso 16)]>
     <style type="text/css">
     a {text-decoration: none;}
@@ -24,7 +24,8 @@
     </o:OfficeDocumentSettings>
 </xml>
 <![endif]-->
-    <!--[if !mso]><!-- -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
     <!--<![endif]-->
     <!--[if !mso]><!-- -->
@@ -39,6 +40,7 @@
             mso-style-priority: 100 !important;
             text-decoration: none !important;
         }
+
 
         a[x-apple-data-detectors] {
             color: inherit !important;
@@ -506,6 +508,7 @@
                                                                     <h2
                                                                         style="Margin:0;line-height:43px;mso-line-height-rule:exactly;font-family:'Space Grotesk', sans-serif;font-size:36px;font-style:normal;font-weight:normal;color:#051923">
                                                                         <strong>Incidencia </strong> Reportada
+                                                                        <br>
                                                                     </h2>
                                                                 </td>
                                                             </tr>
@@ -565,11 +568,10 @@
                                                                         <tr>
                                                                             <td align="center"
                                                                                 style="padding:5px;Margin:0;font-size:0px">
-                                                                                <img
-                                                                                        src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
-                                                                                        alt
-                                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                        width="20"></a>
+                                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
+                                                                                    alt
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                    width="20"></a>
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -627,12 +629,11 @@
                                                                         <tr>
                                                                             <td align="center"
                                                                                 style="padding:5px;Margin:0;font-size:0px">
-                                                                                <img
-                                                                                        src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
-                                                                                        alt
-                                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                        width="20">
-                                                                                                                                                                </td>
+                                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
+                                                                                    alt
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                    width="20">
+                                                                            </td>
                                                                         </tr>
                                                                     </table>
                                                                 </td>
@@ -690,11 +691,72 @@
                                                                         <tr>
                                                                             <td align="center"
                                                                                 style="padding:5px;Margin:0;font-size:0px">
-                                                                                <img
-                                                                                        src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
-                                                                                        alt
-                                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                        width="20">
+                                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
+                                                                                    alt
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                    width="20">
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td style="padding:0;Margin:0;width:20px"></td>
+                                                    <td class="esdev-mso-td" valign="top"
+                                                        style="padding:0;Margin:0">
+                                                        <table cellpadding="0" cellspacing="0" class="es-right"
+                                                            align="right"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                                                            <tr>
+                                                                <td align="left"
+                                                                    style="padding:0;Margin:0;width:510px">
+                                                                    <table cellpadding="0" cellspacing="0"
+                                                                        width="100%" role="presentation"
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                        <tr>
+                                                                            <td align="left"
+                                                                                style="padding:0;Margin:0">
+                                                                                <p
+                                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#1F1F1F;font-size:16px">
+                                                                                    <strong>Contacto :</strong>
+                                                                                    {{ $phone }}
+                                                                                    <br>
+                                                                                </p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="esdev-adapt-off" align="left" style="padding:20px;Margin:0">
+                                            <table cellpadding="0" cellspacing="0" class="esdev-mso-table"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:560px">
+                                                <tr>
+                                                    <td class="esdev-mso-td" valign="top"
+                                                        style="padding:0;Margin:0">
+                                                        <table cellpadding="0" cellspacing="0" class="es-left"
+                                                            align="left"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                            <tr>
+                                                                <td align="left"
+                                                                    style="padding:0;Margin:0;width:30px">
+                                                                    <table cellpadding="0" cellspacing="0"
+                                                                        width="100%" role="presentation"
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                        <tr>
+                                                                            <td align="center"
+                                                                                style="padding:5px;Margin:0;font-size:0px">
+                                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
+                                                                                    alt
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                    width="20">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -753,11 +815,10 @@
                                                                         <tr>
                                                                             <td align="center"
                                                                                 style="padding:5px;Margin:0;font-size:0px">
-                                                                                <img
-                                                                                        src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
-                                                                                        alt
-                                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                        width="20">
+                                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
+                                                                                    alt
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                    width="20">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -816,11 +877,10 @@
                                                                         <tr>
                                                                             <td align="center"
                                                                                 style="padding:5px;Margin:0;font-size:0px">
-                                                                                <img
-                                                                                        src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
-                                                                                        alt
-                                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                        width="20">
+                                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
+                                                                                    alt
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                    width="20">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -879,11 +939,10 @@
                                                                         <tr>
                                                                             <td align="center"
                                                                                 style="padding:5px;Margin:0;font-size:0px">
-                                                                                <img
-                                                                                        src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
-                                                                                        alt
-                                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                        width="20">
+                                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
+                                                                                    alt
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                    width="20">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -942,11 +1001,10 @@
                                                                         <tr>
                                                                             <td align="center"
                                                                                 style="padding:5px;Margin:0;font-size:0px">
-                                                                                <img
-                                                                                        src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
-                                                                                        alt
-                                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                        width="20">
+                                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group.png"
+                                                                                    alt
+                                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                    width="20">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -983,6 +1041,61 @@
                                                                                 </div>
                                                                             </div>
                                                                             <br>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                <tr>
+                                    <td class="esdev-adapt-off" align="left" style="padding:20px;Margin:0">
+                                        <table cellpadding="0" cellspacing="0" class="esdev-mso-table"
+                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:560px">
+                                            <tr>
+                                                <td class="esdev-mso-td" valign="top"
+                                                    style="padding:0;Margin:0">
+                                                    <table cellpadding="0" cellspacing="0" class="es-left"
+                                                        align="left"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                        <tr>
+                                                            <td align="left"
+                                                                style="padding:0;Margin:0;width:30px">
+                                                                <table cellpadding="0" cellspacing="0"
+                                                                    width="100%" role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="padding:5px;Margin:0;font-size:0px">
+                                                                            <i class="fa-solid fa-address-card"></i>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="padding:0;Margin:0;width:20px"></td>
+                                                <td class="esdev-mso-td" valign="top"
+                                                    style="padding:0;Margin:0">
+                                                    <table cellpadding="0" cellspacing="0" class="es-right"
+                                                        align="right"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                                                        <tr>
+                                                            <td align="left"
+                                                                style="padding:0;Margin:0;width:510px">
+                                                                <table cellpadding="0" cellspacing="0"
+                                                                    width="100%" role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="padding:0;Margin:0">
+                                                                            <p style="font-size:  12px;">Registrado por: {{$userName}}-{{$lastuserName}}</p>
+                                                                            <p style="font-size:  12px;"> Del departamento: {{$departamentName}}</p>
+                                                                            <p style="font-size:  12px;"> Correo: {{$userEmail}}</p>
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -1050,11 +1163,10 @@
                                                         <tr>
                                                             <td align="center" class="es-m-txt-c"
                                                                 style="padding:0;Margin:0;padding-bottom:20px;font-size:0px">
-                                                                <img
-                                                                        src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group_gll.png"
-                                                                        alt="Logo"
-                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                        width="50" title="Logo">
+                                                                <img src="https://mbazsv.stripocdn.email/content/guids/CABINET_6276a3e52776c2d08d3f7a077d70c296/images/group_gll.png"
+                                                                    alt="Logo"
+                                                                    style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                    width="50" title="Logo">
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -1084,6 +1196,8 @@
         </tr>
     </table>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
