@@ -315,6 +315,14 @@ return [
             'text'    => 'REPORTE DE INCIDENCIA',
             'icon'    => 'fas fa-fw fa-cogs',
             'submenu' => [
+                
+                [
+                    'text' => 'Resumen de Incidencias',
+                    'route'  => 'stores.index',
+                    'icon' => 'fas fa-fw fa-store',
+                    'active' => ['stores*'],
+                    'can' => 'stores.index',
+                ],
                 [
                     'text' => 'Reportar incidencia',
                     'route'  => 'products.index',
@@ -347,16 +355,9 @@ return [
                 [
                     'text' => 'Departamentos',
                     'route'  => 'departaments.index',
-                    'icon' => 'fas fa-fw fa-stream',
+                    'icon' => 'fas fa-fw fa-sitemap',
                     'active' => ['departaments*'],
                     'can' => 'departaments.index',
-                ],
-                [
-                    'text' => 'Tiendas',
-                    'route'  => 'stores.index',
-                    'icon' => 'fas fa-fw fa-store',
-                    'active' => ['stores*'],
-                    'can' => 'stores.index',
                 ],
                 [
                     'text' => 'Tipos de Incidencias',

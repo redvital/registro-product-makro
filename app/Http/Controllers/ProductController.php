@@ -10,6 +10,7 @@ use App\Models\LogSistema;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Store;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -65,6 +66,7 @@ class ProductController extends Controller
         // dd($request);
         $data = $request->validate([
             'name' => 'required',
+            'phone' => 'required',
             'file' => 'nullable|image',
             'sku' => 'nullable',
             'slug' => 'required|unique:products',
@@ -75,6 +77,7 @@ class ProductController extends Controller
         ]);
         $product = new Product;
         $product->name = $data['name'];
+        $product->name = $data['phone'];
         $product->sku = $data['sku'];
         $product->slug = $data['slug'];
         $product->store_id = $data['store_id'];
@@ -111,12 +114,21 @@ class ProductController extends Controller
         // Obtiene el nombre de la incidencia correspondiente
         $incidenceName = Incidence::findOrFail($data['incidence_id'])->type;
         $categoryName = Category::findOrFail($data['category_id'])->name;
+        $userName = User::findOrFail($data['user_id'])->name;
+        $lastuserName = User::findOrFail($data['user_id'])->last_name;
+        $userEmail = User::findOrFail($data['user_id'])->email;
+        $departamentName = User::findOrFail($data['user_id'])->departament->name;
 
         // Envía un correo electrónico de notificación
         $mailData = [
             'name' => $product->name,
+            'phone' => $product->phone,
             'sku' => $product->sku,
             'slug' => $product->slug,
+            'userName' => $userName,
+            'userEmail' => $userEmail,
+            'lastuserName' => $lastuserName,
+            'departamentName' => $departamentName,
             'storeName' => $storeName,
             'categoryName' => $categoryName,
             'incidenceName' => $incidenceName,

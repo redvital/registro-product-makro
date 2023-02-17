@@ -12,6 +12,7 @@
 @section('content')
     @include('sweetalert::alert')
     <x-card-body>
+        
 
         <div class="invoice p-3 mb-3" style="border-radius: 0.95rem" bis_skin_checked="1">
             <div class="row invoice-info" style="border-radius: 0.95rem" bis_skin_checked="1">
@@ -74,9 +75,6 @@
             </div>
 
 
-            <hr>
-
-
             {{-- <div class="row no-print" bis_skin_checked="1">
                 <div class="col-12" bis_skin_checked="1">
                     <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i
@@ -86,6 +84,16 @@
                     </button>
                 </div>
             </div> --}}
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-12">
+
+                @can('products.edit')
+                <a href="{{ route('products.edit', $product) }}" class="btn bg-navy btn-sm px-2 elevation-4 float-right"><i
+                    class="fas fa-edit mt-2 mb-2 px-3"></i> Editar Estatus
+                </a>
+                @endcan
+            </div>
         </div>
     </x-card-body>
 
