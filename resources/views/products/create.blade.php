@@ -142,7 +142,7 @@
             <div class="col-md-5">
                 <div class="image image-wrapper">
                     @isset($product->image)
-                        <img id="picture" class="" src="{{ Storage::url($product->image->url) }}" alt=""
+                        <img id="picture" class="" src="{{ Storage::url($product?->image?->url) }}" alt=""
                             srcset="">
                     @else
                         <img id="picture" class=""
