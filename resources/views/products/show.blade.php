@@ -64,9 +64,9 @@
                 <div class="col-sm-5 mt-6 invoice-col" bis_skin_checked="1">
                     <div class="view-img">
                         <div class="image image-wrapper">
-
+                            
                             <img class="w-full h-80 object-cover object-center"
-                                src="{{ Storage::url($product->image->url) }}" alt="">
+                                src="{{ Storage::url($product?->image?->url) }}" alt="">
                         </div>
                     </div>
                 </div>
