@@ -11,9 +11,20 @@
                         {{ $comment->created_at->diffForHumans() }}
                     </cite>
                 </small>
+                @if(auth()->id() === $comment->user_id)
+                <button type="submit" class="float-right text-danger btn btn-link formulario-eliminar" wire:click="destroy({{$comment}})"><i class="fas fa-trash-alt"></i></button>
+                @endif
             </div>
         </div>
     @endforeach
+    <span class="float-right">
+        <small>
+            <cite>
+
+            ({{ $product->comments->count() }}) Comentarios...
+            </cite>
+        </small>
+    </span>
 </div>
 
 {{-- @foreach($comments as $comment)

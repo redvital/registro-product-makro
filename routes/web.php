@@ -39,19 +39,21 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Route::resource('categories', [CategoryController::class])->names('categories');
-Route::resource('categories', CategoryController::class )->except('show')->names('categories');
-Route::resource('departaments', DepartamentController::class )->except('show')->names('departaments');
-Route::resource('stores', StoreController::class )->except('show')->names('stores');
-Route::resource('incidences', IncidenceController::class )->except('show')->names('incidences');
-Route::resource('status', StatuController::class )->names('status');
-Route::resource('products', ProductController::class )->names('products');
-Route::resource('users', UserController::class )->names('users');
-Route::resource('roles', RoleController::class )->names('roles');
-Route::resource('authorizations', AuthorizationController::class )->names('authorizations');
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('stores/incidence-store/{store}', [StoreController::class, 'incidencestore' ])->name('stores.incidence-store');
-Route::resource('logins', LoginController::class)->names('logins');
-Route::resource('logs', LogsistemaController::class)->names('logs');
-Route::resource('backups', BackupsController::class)->names('backups');
+    // Route::resource('categories', [CategoryController::class])->names('categories');
+    Route::resource('categories', CategoryController::class)->except('show')->names('categories');
+    Route::resource('departaments', DepartamentController::class)->except('show')->names('departaments');
+    Route::resource('stores', StoreController::class)->except('show')->names('stores');
+    Route::resource('incidences', IncidenceController::class)->except('show')->names('incidences');
+    Route::resource('status', StatuController::class)->names('status');
+    Route::resource('products', ProductController::class)->names('products');
+    Route::resource('users', UserController::class)->names('users');
+    Route::resource('roles', RoleController::class)->names('roles');
+    Route::resource('authorizations', AuthorizationController::class)->names('authorizations');
 
+    Route::get('stores/incidence-store/{store}', [StoreController::class, 'incidencestore'])->name('stores.incidence-store');
+    Route::resource('logins', LoginController::class)->names('logins');
+    Route::resource('logs', LogsistemaController::class)->names('logs');
+    Route::resource('backups', BackupsController::class)->names('backups');
+});
