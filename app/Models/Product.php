@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'name', 'slug', 'sku', 'store_id', 'status_id', 'user_id', 'category_id', 'incidence_id', 'description'];
+    protected $fillable = ['id', 'name', 'phone', 'slug', 'sku', 'store_id', 'status_id', 'user_id', 'category_id', 'incidence_id', 'description'];
 
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    public function categorie()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
@@ -46,5 +46,9 @@ class Product extends Model
     public function image()
     {
         return $this->morphOne(Image::class, 'imageable');
+    }
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
     }
 }

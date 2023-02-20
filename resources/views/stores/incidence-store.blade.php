@@ -16,6 +16,9 @@
 @stop
 
 @section('css')
+
+<link rel="stylesheet" href="{{ asset('vendor/select2/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/select2/select2-bootstrap4.min.css') }}">
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
@@ -25,7 +28,7 @@
     <script src=" {{ asset('vendor/sweetalert-estatus.js') }} "></script>
     <script src=" {{ asset('vendor/sweetalert-estatus2.js') }} "></script>
     <script src=" {{ asset('vendor/popper.min.js') }} "></script>
-
+    <script src="{{ asset('vendor/select2/select2.full.min.js') }}"></script>
     <script>
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()
