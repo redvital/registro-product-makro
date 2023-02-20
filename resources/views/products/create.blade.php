@@ -25,7 +25,6 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-
                             {!! Form::label('name', 'Nombre del producto : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
                             {!! Form::text('name', null, [
                                 'class' => 'form-control',
@@ -57,7 +56,7 @@
                             {!! Form::label('phone', 'Telefono : ', ['class' => 'text-navy']) !!} <span class="text-danger">*</span>
                             {!! Form::text('phone', null, [
                                 'class' => 'form-control',
-                                'placeholder' => 'Ingrese el un numero de telefono',
+                                'placeholder' => 'Ingrese el un numero de contacto',
                             ]) !!}
 
                             @error('sku')
@@ -111,12 +110,7 @@
                                 'class' => 'form-control select2' . ($errors->has('category_id') ? ' is-invalid' : ''),
                                 'placeholder' => '',
                             ]) !!}
-                            {!! $errors->first(
-                                'category_id',
-                                ' <div class="invalid-feedback text-center">
-                                                                                                                                <strong>:message</strong>
-                                                                                                                            </div>',
-                            ) !!}
+                            {!! $errors->first('category_id',' <div class="invalid-feedback text-center"><strong>:message</strong></div>') !!}
 
                         </div>
                     </div>
@@ -127,24 +121,18 @@
                                 'class' => 'form-control select2' . ($errors->has('incidence_id') ? ' is-invalid' : ''),
                                 'placeholder' => '',
                             ]) !!}
-                            {!! $errors->first(
-                                'incidence_id',
-                                ' <div class="invalid-feedback text-center">
-                                                                                                                                <strong>:message</strong>
-                                                                                                                            </div>',
-                            ) !!}
-
+                            {!! $errors->first('incidence_id',' <div class="invalid-feedback text-center"><strong>:message</strong></div>') !!}
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            {!! Form::label('description', 'Descripción :', ['class' => 'text-navy']) !!}
+                            {!! Form::label('description', 'Observación :', ['class' => 'text-navy']) !!}
                             {!! Form::textarea('description', null, [
                                 'class' => 'form-control',
                                 'rows' => 2,
-                                'placeholder' => 'Agregue una descripción',
+                                'placeholder' => 'Ingrese una observación o descripción del la incidencia.',
                             ]) !!}
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
@@ -153,11 +141,10 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-5">
                 <div class="image image-wrapper">
                     @isset($product->image)
-                        <img id="picture" class="" src="{{ Storage::url($product->image->url) }}" alt=""
+                        <img id="picture img-fluid" class="" src="{{ Storage::url($product->image->url) }}" alt=""
                             srcset="">
                     @else
                         <img id="picture" class="" src="https://via.placeholder.com/400x230" alt=""
@@ -191,7 +178,7 @@
             position: absolute;
             object-fit: cover;
             width: 100%;
-            height: 100%;
+            height: auto;
         }
     </style>
     <link rel="stylesheet" href="{{ asset('vendor/select2/select2.min.css') }}">

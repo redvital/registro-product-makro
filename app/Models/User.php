@@ -93,4 +93,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Login::class);
     }
+    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

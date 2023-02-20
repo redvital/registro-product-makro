@@ -11,89 +11,165 @@
 
 @section('content')
     @include('sweetalert::alert')
-    <x-card-body>
-        
 
-        <div class="invoice p-3 mb-3" style="border-radius: 0.95rem" bis_skin_checked="1">
-            <div class="row invoice-info" style="border-radius: 0.95rem" bis_skin_checked="1">
-                <div class="col-md-7">
-                    <div class="row" bis_skin_checked="1">
-                        <div class="col-12" bis_skin_checked="1">
+    <x-card-body>
+
+
+        <div class="invoice p-3 mb-3" style="border-radius: 0.95rem">
+            <div class="row invoice-info" style="border-radius: 0.95rem">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
                             <h4>
                                 <small class="float-left">Ingreso:
                                     {{ $product->created_at }}</small>
                             </h4>
-
                         </div>
                     </div>
                     <hr>
-                    <div class="row">
-                        <div class="col-md-7 invoice-col" bis_skin_checked="1">
-                            <h5 class="text-blue h5 text-underline" style="text-decoration: underline;"> <strong>
-                                    Datos</strong>
-                            </h5>
-                            <address>
-                                <strong>Producto:</strong> {{ $product->name }}<br>
-                                <strong>Usuario :</strong> {{ $product->user->name }}<br>
-                                <strong>Tienda:</strong> {{ $product->store->name }}<br>
-                            </address>
+                    <div class="card elevation-2" bis_skin_checked="1">
+                        <div class="card-header" bis_skin_checked="1">
+                            <h3 class="card-title text-blue text-underline">
+                                <strong>
+                                    <i class="fas fa-info-circle"></i> Informacion del producto <span class="undeline">{{ $product->name }}</span> 
+                                </strong>
+                            </h3>
+                            <div class="card-tools" bis_skin_checked="1">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
                         </div>
+                        
+                        <div class="card-body" bis_skin_checked="1" style="display: block;">
+                            <div class="row">
+                                <div class="col-md-6 invoice-col">
+                                    <address>
+                                        <strong>Responsable :</strong> {{ $product->user->name }}
+                                        {{ $product->user->last_name }}<br>
+                                        <strong>Tienda:</strong> {{ $product->store->name }}<br>
+                                        <strong>Incidencia:</strong> {{ $product->incidence->type }}<br>
+                                        @isset($product->sku)
+                                        <strong>SKU:</strong> {{ $product->sku }}<br>
+                                        @endisset
+                                    </address>
+                                </div>
 
-                        <div class="col-md-5 invoice-col" bis_skin_checked="1">
-                            <h5 class="text-blue h5 text-underline" style="text-decoration: underline;"> <strong>
-                                    Fechas</strong>
-                            </h5>
-                            <address>
-                                <strong>Se registró :</strong> {{ $product->created_at }}<br>
-                                <strong>Se Actualizó :</strong> {{ $product->updated_at }}<br>
-                            </address>
+                                <div class="col-md-6 invoice-col">
+                                    <address>
+                                        <strong>Estatus :@if ($product->status_id == 1)
+                                                            <span class="elevation-2 badge badge-warning">{{ $product->status->type }}</span> 
+                                                             <a class="float-right" href="{{ route('products.edit', $product) }}"> <i class="fas fa-edit"></i></a>
+                                                        @elseif ($product->status_id == 2)
+                                                            <span class="elevation-2 badge badge-info ">{{ $product->status->type }}</span>
+                                                             <a class="float-right" href="{{ route('products.edit', $product) }}"> <i class="fas fa-edit"></i></a>
+                                                        @elseif ($product->status_id == 3)
+                                                            <span class="elevation-2 badge badge-primary ">{{ $product->status->type }}</span>
+                                                             <a class="float-right" href="{{ route('products.edit', $product) }}"> <i class="fas fa-edit"></i></a>
+                                                        @elseif ($product->status_id == 4)
+                                                            <span class="elevation-2 badge badge-olive ">{{ $product->status->type }}</span>
+                                                             <a class="float-right" href="{{ route('products.edit', $product) }}"> <i class="fas fa-edit"></i></a>
+                                                        @elseif ($product->status_id == 5)
+                                                            <span class="elevation-2 badge badge-success ">{{ $product->status->type }}</span>
+                                                             <a class="float-right" href="{{ route('products.edit', $product) }}"> <i class="fas fa-edit"></i></a>
+                                                        @endif
+                                        </strong>
+                                        <br>
+                                        <strong>Categoria :</strong> {{ $product->category->name }}<br>
+                                        <strong>Se registró :</strong> {{ $product->created_at->format('d-m-Y') }}<br>
+                                        <strong>Se Actualizó :</strong> {{ $product->updated_at->format('d-m-Y') }}<br>
+                                        <strong>Contacto :</strong> {{ $product->phone }}<br>
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <address>
+                                        <strong>Observación :</strong> {{ $product->description }}
+
+                                    </address>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row invoice-info" style="border-radius: 0.95rem" bis_skin_checked="1">
-                        <div class="col-sm-12 invoice-col" bis_skin_checked="1">
-                            <h5 class="text-blue h5 text-underline" style="text-decoration: underline;"> <strong>
-                                    Comentarios</strong>
-                            </h5>
-                            <hr>
-                            <address>
-                            </address>
+                    
+                    <div class="card elevation-2" bis_skin_checked="1">
+                        <div class="card-header" bis_skin_checked="1">
+                            <h3 class="card-title text-blue text-underline">
+                                <strong>
+                                    <i class="fas fa-image"></i>  Foto del producto
+                                </strong>
+                            </h3>
+                            <div class="card-tools" bis_skin_checked="1">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                            
+                        <div class="card-body" bis_skin_checked="1" style="display: block;">
+                            <div class="row">
+                                <div class="">
+                                    <div class="">
+                                        {{-- <img class="w-full h-80 object-cover object-center" src="{{ Storage::url($product->image->url) }}" alt=""> --}}
+                                        @isset($product->image)
+                                            <img id="picture" class="img-fluid rounded mx-auto d-block" src="{{ Storage::url($product->image->url) }}"
+                                                alt="" srcset="">
+                                        @else
+                                            <img id="picture" class="" src="https://via.placeholder.com/400x230"
+                                                alt="" srcset="">
+                                        @endisset
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
 
+                <div class="col-sm-6 mt-6 ">
+                    <div class="row">
+                        <div class="col-md-12">
 
-                <div class="col-sm-5 mt-6 invoice-col" bis_skin_checked="1">
-                    <div class="view-img">
-                        <div class="image image-wrapper">
+                            <a href="{{ URL::previous() }}"
+                                class="btn bg-navy btn-sm float-right mb-1 px-2 elevation-4"><i
+                                    class="fas fa-reply mt-2 px-3"></i>
+                            </a>
 
-                            <img class="w-full h-80 object-cover object-center"
-                                src="{{ Storage::url($product->image->url) }}" alt="">
+                        </div>
+                    </div>
+                    <hr class="mt-0">
+                    <div class="row invoice-info" style="border-radius: 0.95rem">
+                        <div class="col-sm-12 invoice-col">
+                            <div class="card elevation-2" bis_skin_checked="1">
+                                <div class="card-header" bis_skin_checked="1">
+                                    <h3 class="card-title text-blue text-underline">
+                                        <strong>
+                                            <i class="fas fa-comments"></i> Comentarios ({{ $product->comments->count() }})
+                                        </strong>
+                                    </h3>
+                                    <div class="card-tools" bis_skin_checked="1">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-body" bis_skin_checked="1" style="display: block;">
+                                    @livewire('comment-section', ['product' => $product])
+                                    <hr>
+                                    @livewire('product-comments', ['product' => $product])
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-
-
-            {{-- <div class="row no-print" bis_skin_checked="1">
-                <div class="col-12" bis_skin_checked="1">
-                    <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i
-                            class="fas fa-print"></i> Print</a>
-                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                        <i class="fas fa-download"></i> Generar PDF
-                    </button>
-                </div>
-            </div> --}}
         </div>
         <div class="row mb-4">
-            <div class="col-md-12">
-
-                @can('products.edit')
-                <a href="{{ route('products.edit', $product) }}" class="btn bg-navy btn-sm px-2 elevation-4 float-right"><i
-                    class="fas fa-edit mt-2 mb-2 px-3"></i> Editar Estatus
-                </a>
-                @endcan
-            </div>
+            
         </div>
     </x-card-body>
 

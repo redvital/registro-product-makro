@@ -11,7 +11,7 @@
 
 @section('content')
     <x-card-body>
-        <a href="{{ route('products.index') }}" class="btn bg-navy btn-sm float-right mb-4 px-2 elevation-4"><i
+        <a href="{{ URL::previous() }}" class="btn bg-navy btn-sm float-right mb-4 px-2 elevation-4"><i
                 class="fas fa-reply mt-2 px-3"></i>
         </a>
         <br>

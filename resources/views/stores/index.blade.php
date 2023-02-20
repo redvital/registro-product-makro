@@ -5,7 +5,7 @@
 @section('content_header')
 
 <x-card-header class="mt-2">
-    <h3 class="text-white pt-2">Lista de Tiendas</h3>
+    <h3 class="text-white pt-2">Lista de incidencias por Tiendas</h3>
 </x-card-header>
 @stop
 

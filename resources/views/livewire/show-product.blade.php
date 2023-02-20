@@ -119,8 +119,11 @@
 
                             </td>
                             <td>
-                                <a href=" {{ route('stores.incidence-store', $product->store) }}">
-                                    {{ $product->store->name }} <i class="fa-solid fa-arrow-up-right"></i>
+                                <a href=" {{ route('stores.incidence-store', $product->store) }}"
+                                    data-toggle="tooltip" data-placement="top" title="Ir a las incidencias de la tienda"
+                                    >
+                                    {{ $product->store->name }} <i class="fas fa-level-up-alt float-right"></i>
+                                
                                 </a>
 
                             </td>
@@ -186,3 +189,5 @@
         @endif
     </div>
 </div>
+
+
