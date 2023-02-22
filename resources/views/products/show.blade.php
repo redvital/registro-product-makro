@@ -10,10 +10,11 @@
 @stop
 
 @section('content')
-    @include('sweetalert::alert')
+
 
     <x-card-body>
 
+        @include('sweetalert::alert')
 
         <div class="invoice p-3 mb-3" style="border-radius: 0.95rem">
             <div class="row invoice-info" style="border-radius: 0.95rem">
@@ -146,7 +147,7 @@
                                 <div class="card-header" bis_skin_checked="1">
                                     <h3 class="card-title text-blue text-underline">
                                         <strong>
-                                            <i class="fas fa-comments"></i> Comentarios ({{ $product->comments->count() }})
+                                            <i class="fas fa-comments"></i> Comentarios...
                                         </strong>
                                     </h3>
                                     <div class="card-tools" bis_skin_checked="1">

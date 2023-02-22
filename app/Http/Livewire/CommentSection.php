@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Comment;
 use App\Models\Product;
 use Livewire\Component;
 
@@ -42,6 +43,12 @@ class CommentSection extends Component
         session()->flash('success', 'Comment added successfully.');
 
         $this->emit('commentAdded', $comment->id);
+    }
+    public function destroy(Comment $comment)
+    {
+        $comment->delete();
+        $this->product = Product::find($this->product->id);
+
     }
 
 }
